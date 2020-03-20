@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace PPiJ_Projekt
+namespace PPiJ_projekt
 {
     public class Program
     {

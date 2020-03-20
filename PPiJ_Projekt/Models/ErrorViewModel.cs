@@ -1,6 +1,6 @@
 using System;
 
-namespace PPiJ_Projekt.Models
+namespace PPiJ_projekt.Models
 {
     public class ErrorViewModel
     {

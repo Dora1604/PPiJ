@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PPiJ_Projekt.Models;
+using PPiJ_projekt.Models;
 
-namespace PPiJ_Projekt.Controllers
+namespace PPiJ_projekt.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ppij\\PPiJ_Projekt\\PPiJ_Projekt\\PPiJ_Projekt.csproj": {}
+    "C:\\chatProbica\\PPiJ_projekt\\PPiJ_projekt\\PPiJ_projekt.csproj": {}
   },
   "projects": {
-    "C:\\ppij\\PPiJ_Projekt\\PPiJ_Projekt\\PPiJ_Projekt.csproj": {
+    "C:\\chatProbica\\PPiJ_projekt\\PPiJ_projekt\\PPiJ_projekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ppij\\PPiJ_Projekt\\PPiJ_Projekt\\PPiJ_Projekt.csproj",
-        "projectName": "PPiJ_Projekt",
-        "projectPath": "C:\\ppij\\PPiJ_Projekt\\PPiJ_Projekt\\PPiJ_Projekt.csproj",
+        "projectUniqueName": "C:\\chatProbica\\PPiJ_projekt\\PPiJ_projekt\\PPiJ_projekt.csproj",
+        "projectName": "PPiJ_projekt",
+        "projectPath": "C:\\chatProbica\\PPiJ_projekt\\PPiJ_projekt\\PPiJ_projekt.csproj",
         "packagesPath": "C:\\Users\\ancip\\.nuget\\packages\\",
-        "outputPath": "C:\\ppij\\PPiJ_Projekt\\PPiJ_Projekt\\obj\\",
+        "outputPath": "C:\\chatProbica\\PPiJ_projekt\\PPiJ_projekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ancip\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,28 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
