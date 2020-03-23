@@ -17,6 +17,11 @@ GM_ENDPOINT = 'https://maps.google.com/maps/api/geocode/json'
 GM_API_KEY = os.environ.get('GM_API_KEY')
 #GM_API_KEY = "AIzaSyBxOP6J5EdNYKw2SPS5UiN2OL5WOUvgWZw"
 
+def convert_dates(dates):
+
+    for i in range(len(dates)):
+         dates[i] = dates[i].rstrip()
+    return dates
 
 def make_get_request(uri: str, payload):
     """
@@ -57,7 +62,13 @@ def get_forecast_data(lat: str, lng: str):
     :param lng:
     :return:
     """
-    time = "2012-02-01T19:06:32"
+    file = open("dates.txt","r")
+    dates = file.readlines()
+    print(dates)
+    dates = convert_dates(dates)
+    print(dates)
+
+    time = dates[0]
     uri = DS_API_HOST + '/' + DS_API_KEY + '/' + str(lat) + ',' + str(lng) + ',' + time
     payload = {'lang': LANG, 'units': DS_UNITS}
     response = make_get_request(uri, payload)
@@ -105,7 +116,7 @@ def main():
     """
     Main Function
     """
-    if len(sys.argv) < 2 or DS_API_KEY is None:
+    if len(sys.argv) < 1 or DS_API_KEY is None:
         exit('Error: no location or env vars found')
     print(sys.argv)
     geo_data = get_geo_data(sys.argv[1])
