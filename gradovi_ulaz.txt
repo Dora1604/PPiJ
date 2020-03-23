@@ -7,13 +7,6 @@
 <td><a href="/wiki/Datoteka:Zagreb_trg_bana_Jela%C4%8Di%C4%87a.jpg" class="image"><img alt="Zagreb trg bana Jelačića.jpg" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/80/Zagreb_trg_bana_Jela%C4%8Di%C4%87a.jpg/150px-Zagreb_trg_bana_Jela%C4%8Di%C4%87a.jpg" decoding="async" width="150" height="113" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/80/Zagreb_trg_bana_Jela%C4%8Di%C4%87a.jpg/225px-Zagreb_trg_bana_Jela%C4%8Di%C4%87a.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/80/Zagreb_trg_bana_Jela%C4%8Di%C4%87a.jpg/300px-Zagreb_trg_bana_Jela%C4%8Di%C4%87a.jpg 2x" data-file-width="1600" data-file-height="1200" /></a>
 </td></tr>
 <tr>
-<td><a href="/wiki/Bakar_(Hrvatska)" title="Bakar (Hrvatska)">Bakar</a></td>
-<td><a href="/wiki/Primorsko-goranska_%C5%BEupanija" title="Primorsko-goranska županija">Primorsko-goranska županija</a></td>
-<td><a href="/w/index.php?title=Datoteka:Bakar_(grb).gif&amp;filetimestamp=20140505215001&amp;" class="image"><img alt="Bakar (grb).gif" src="//upload.wikimedia.org/wikipedia/bs/thumb/a/ad/Bakar_%28grb%29.gif/70px-Bakar_%28grb%29.gif" decoding="async" width="70" height="87" srcset="//upload.wikimedia.org/wikipedia/bs/thumb/a/ad/Bakar_%28grb%29.gif/105px-Bakar_%28grb%29.gif 1.5x, //upload.wikimedia.org/wikipedia/bs/thumb/a/ad/Bakar_%28grb%29.gif/140px-Bakar_%28grb%29.gif 2x" data-file-width="173" data-file-height="216" /></a></td>
-<td><b>51222</b></td>
-<td><a href="/wiki/Datoteka:Bakar_Croatia_2010_0728_01.JPG" class="image"><img alt="Bakar Croatia 2010 0728 01.JPG" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bakar_Croatia_2010_0728_01.JPG/150px-Bakar_Croatia_2010_0728_01.JPG" decoding="async" width="150" height="113" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bakar_Croatia_2010_0728_01.JPG/225px-Bakar_Croatia_2010_0728_01.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Bakar_Croatia_2010_0728_01.JPG/300px-Bakar_Croatia_2010_0728_01.JPG 2x" data-file-width="3648" data-file-height="2736" /></a>
-</td></tr>
-<tr>
 <td><a href="/wiki/Beli_Manastir" title="Beli Manastir">Beli Manastir</a></td>
 <td><a href="/wiki/Osje%C4%8Dko-baranjska_%C5%BEupanija" title="Osječko-baranjska županija">Osječko-baranjska županija</a></td>
 <td><a href="/w/index.php?title=Datoteka:Beli_Manastir_(grb).gif&amp;filetimestamp=20141018000933&amp;" class="image"><img alt="Beli Manastir (grb).gif" src="//upload.wikimedia.org/wikipedia/bs/thumb/3/31/Beli_Manastir_%28grb%29.gif/70px-Beli_Manastir_%28grb%29.gif" decoding="async" width="70" height="98" srcset="//upload.wikimedia.org/wikipedia/bs/thumb/3/31/Beli_Manastir_%28grb%29.gif/105px-Beli_Manastir_%28grb%29.gif 1.5x, //upload.wikimedia.org/wikipedia/bs/thumb/3/31/Beli_Manastir_%28grb%29.gif/140px-Beli_Manastir_%28grb%29.gif 2x" data-file-width="155" data-file-height="216" /></a></td>
@@ -208,13 +201,6 @@
 <td><a href="/wiki/Datoteka:Hvar_seal.gif" class="image"><img alt="Hvar seal.gif" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/69/Hvar_seal.gif/70px-Hvar_seal.gif" decoding="async" width="70" height="90" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/69/Hvar_seal.gif/105px-Hvar_seal.gif 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/69/Hvar_seal.gif/140px-Hvar_seal.gif 2x" data-file-width="164" data-file-height="212" /></a></td>
 <td><b>21450</b></td>
 <td><a href="/wiki/Datoteka:Hvar_from_Fortica.JPG" class="image"><img alt="Hvar from Fortica.JPG" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hvar_from_Fortica.JPG/150px-Hvar_from_Fortica.JPG" decoding="async" width="150" height="113" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hvar_from_Fortica.JPG/225px-Hvar_from_Fortica.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hvar_from_Fortica.JPG/300px-Hvar_from_Fortica.JPG 2x" data-file-width="2304" data-file-height="1728" /></a>
-</td></tr>
-<tr>
-<td><a href="/wiki/Ilok" title="Ilok">Ilok</a></td>
-<td><a href="/wiki/Vukovarsko-srijemska_%C5%BEupanija" title="Vukovarsko-srijemska županija">Vukovarsko-srijemska županija</a></td>
-<td><a href="/w/index.php?title=Datoteka:Ilok_(grb).gif&amp;filetimestamp=20141018011305&amp;" class="image"><img alt="Ilok (grb).gif" src="//upload.wikimedia.org/wikipedia/bs/thumb/8/8b/Ilok_%28grb%29.gif/70px-Ilok_%28grb%29.gif" decoding="async" width="70" height="87" srcset="//upload.wikimedia.org/wikipedia/bs/thumb/8/8b/Ilok_%28grb%29.gif/105px-Ilok_%28grb%29.gif 1.5x, //upload.wikimedia.org/wikipedia/bs/thumb/8/8b/Ilok_%28grb%29.gif/140px-Ilok_%28grb%29.gif 2x" data-file-width="173" data-file-height="216" /></a></td>
-<td><b>32236</b></td>
-<td><a href="/wiki/Datoteka:Ilok_view.jpg" class="image"><img alt="Ilok view.jpg" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ilok_view.jpg/150px-Ilok_view.jpg" decoding="async" width="150" height="100" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ilok_view.jpg/225px-Ilok_view.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ilok_view.jpg/300px-Ilok_view.jpg 2x" data-file-width="1632" data-file-height="1088" /></a>
 </td></tr>
 <tr>
 <td><a href="/wiki/Imotski" title="Imotski">Imotski</a></td>
