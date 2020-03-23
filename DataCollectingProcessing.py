@@ -85,7 +85,7 @@ def print_daily_forecast(geo, forecast):
     :param geo:
     :param forecast:
     """
-    print('Getting Forecast for: ' + geo['formatted_address'])
+    print('Getting history for: ' + geo['formatted_address'])
     #print('Weekly Summary: ' + forecast['summary'])
     print()
 
