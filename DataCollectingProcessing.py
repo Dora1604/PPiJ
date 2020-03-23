@@ -23,6 +23,10 @@ def convert_dates(dates):
          dates[i] = dates[i].rstrip()
     return dates
 
+def make_list(file):
+    the_list = file.readlines()
+    return the_list
+
 def make_get_request(uri: str, payload):
     """
     Function to make a GET request to API Endpoint
@@ -47,7 +51,7 @@ def get_geo_data(address: str):
 
     if not response:
         return None
-    print(response)
+    #print(response)
     data = response['results'][0]
     formatted_address = data['formatted_address']
     lat = data['geometry']['location']['lat']
@@ -56,19 +60,14 @@ def get_geo_data(address: str):
     return {'lat': lat, 'lng': lng, 'formatted_address': formatted_address}
 
 
-def get_forecast_data(lat: str, lng: str):
+def get_history_data(lat: str, lng: str, time:str):
     """ Function to get Forecast data from DarkSky.net API
     :param lat:
     :param lng:
     :return:
     """
-    file = open("dates.txt","r")
-    dates = file.readlines()
-    print(dates)
-    dates = convert_dates(dates)
-    print(dates)
 
-    time = dates[0]
+
     uri = DS_API_HOST + '/' + DS_API_KEY + '/' + str(lat) + ',' + str(lng) + ',' + time
     payload = {'lang': LANG, 'units': DS_UNITS}
     response = make_get_request(uri, payload)
@@ -79,7 +78,7 @@ def get_forecast_data(lat: str, lng: str):
     return response['daily']
 
 
-def print_daily_forecast(geo, forecast):
+def print_history(geo, forecast):
     """
     Function to print daily weather forecast information
     :param geo:
@@ -95,12 +94,12 @@ def print_daily_forecast(geo, forecast):
 
         day_name = date.strftime("%A")
 
-        summary = day['summary']
+        #summary = day['summary']
         temperature_min = str(round(day['temperatureMin'])) + 'ºC'
         temperature_max = str(round(day['temperatureMax'])) + 'ºC'
         uv_index = str(round(day["uvIndex"]))
         print(
-            date.strftime('%d/%m/%Y') + ' (' + day_name + '): '  + ' ' + summary + " " + temperature_min + ' - ' + temperature_max + " " + "with UV index:" + " " + uv_index
+            date.strftime('%d/%m/%Y') + ' (' + day_name + '): '  +  " " + temperature_min + ' - ' + temperature_max + " " + "with UV index:" + " " + uv_index
         )
         print()
 
@@ -116,23 +115,32 @@ def main():
     """
     Main Function
     """
-    if len(sys.argv) < 1 or DS_API_KEY is None:
+    if DS_API_KEY is None:
         exit('Error: no location or env vars found')
-    print(sys.argv)
-    geo_data = get_geo_data(sys.argv[1])
-
-    if not geo_data:
-        exit('Error: Address not found or invalid response')
-
-    forecast_data = get_forecast_data(geo_data['lat'], geo_data['lng'])
-    print(forecast_data)
-
-    if not forecast_data:
-        exit('Error: Forecast not found or invalid response')
-
-    # Print Output Forecast information
+    file = open("gradovi_izlaz.txt","r")
+    cities = make_list(file)
+    file.close()
     print_header()
-    print_daily_forecast(geo_data, forecast_data)
+    file = open("dates.txt", "r")
+    dates = convert_dates(make_list(file))
+    file.close()
+    for i in range(len(cities)):
+        geo_data = get_geo_data(cities[i])
+
+        if not geo_data:
+            exit('Error: Address not found or invalid response')
+
+        for j in range(len(dates)):
+
+            history_data = get_history_data(geo_data['lat'], geo_data['lng'],dates[j])
+            #print(history_data)
+
+            if not history_data:
+                exit('Error: Forecast not found or invalid response')
+
+    # Print Output History information
+
+            print_history(geo_data, history_data)
 
 
 if __name__ == '__main__':
