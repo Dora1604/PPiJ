@@ -1,7 +1,8 @@
 import os
-import sys
 import requests
 from datetime import datetime
+import json
+
 
 # Global Parameters
 LANG = 'hr'
@@ -78,7 +79,7 @@ def get_history_data(lat: str, lng: str, time:str):
     return response['daily']
 
 
-def print_history(geo, forecast):
+def print_history(geo, forecast,weather_file):
     """
     Function to print daily weather forecast information
     :param geo:
@@ -92,16 +93,38 @@ def print_history(geo, forecast):
         date = datetime.fromtimestamp(day['time'])
 
 
-        day_name = date.strftime("%A")
+        #day_name = date.strftime("%A")
 
-        #summary = day['summary']
+        summary = day['summary']
         temperature_min = str(round(day['temperatureMin'])) + 'ºC'
         temperature_max = str(round(day['temperatureMax'])) + 'ºC'
+        icon = str(day["icon"])
+        humidity = str(round(day['humidity']))
+        pressure = str(round(day['pressure']))
+        cloud_cover = str(round(day['cloudCover']))
+        visibility = str(round(day['cloudCover']))
         uv_index = str(round(day["uvIndex"]))
-        print(
-            date.strftime('%d/%m/%Y') + ' (' + day_name + '): '  +  " " + temperature_min + ' - ' + temperature_max + " " + "with UV index:" + " " + uv_index
-        )
-        print()
+        info = (geo["formatted_address"],date.strftime('%d/%m/%Y'))
+        weather = {
+            "city": {
+            "info": info,
+            "data":
+            {
+            "summary": summary,
+            "temp_min": temperature_min,
+            "temp_max": temperature_max,
+            "icon": icon,
+            "humidity": humidity,
+            "pressure": pressure,
+            "cloud_cover": cloud_cover,
+            "visibility": visibility,
+            "uv_index": uv_index
+        } } }
+        json.dump(weather, weather_file, ensure_ascii=False,indent=2)
+        #print(
+            #date.strftime('%d/%m/%Y') + ' (' + day_name + '): '  +  " " + temperature_min + ' - ' + temperature_max + " " + "with UV index:" + " " + uv_index
+        #)
+        #print()
 
 
 def print_header():
@@ -117,13 +140,18 @@ def main():
     """
     if DS_API_KEY is None:
         exit('Error: no location or env vars found')
+
     file = open("gradovi_izlaz.txt","r")
     cities = make_list(file)
     file.close()
     print_header()
+
     file = open("dates.txt", "r")
     dates = convert_dates(make_list(file))
     file.close()
+
+    weather_file = open('weather_file.json', 'w') # writing JSON object
+
     for i in range(len(cities)):
         geo_data = get_geo_data(cities[i])
 
@@ -140,7 +168,7 @@ def main():
 
     # Print Output History information
 
-            print_history(geo_data, history_data)
+            print_history(geo_data, history_data,weather_file)
 
 
 if __name__ == '__main__':
