@@ -4,7 +4,7 @@ import requests
 from datetime import datetime
 
 # Global Parameters
-LANG = 'en'
+LANG = 'hr'
 
 # DarkSky.net API Parameters
 DS_API_HOST = 'https://api.darksky.net/forecast'
@@ -57,7 +57,7 @@ def get_forecast_data(lat: str, lng: str):
     :param lng:
     :return:
     """
-    time = "2018-10-24T19:06:32"
+    time = "2012-02-01T19:06:32"
     uri = DS_API_HOST + '/' + DS_API_KEY + '/' + str(lat) + ',' + str(lng) + ',' + time
     payload = {'lang': LANG, 'units': DS_UNITS}
     response = make_get_request(uri, payload)
@@ -81,24 +81,22 @@ def print_daily_forecast(geo, forecast):
     for day in forecast['data']:
         date = datetime.fromtimestamp(day['time'])
 
-        if date.date() == datetime.now().date():
-            day_name = 'Today'
-        else:
-            day_name = date.strftime("%A")
 
-        #summary = day['summary']
+        day_name = date.strftime("%A")
+
+        summary = day['summary']
         temperature_min = str(round(day['temperatureMin'])) + 'ºC'
         temperature_max = str(round(day['temperatureMax'])) + 'ºC'
         uv_index = str(round(day["uvIndex"]))
         print(
-            date.strftime('%d/%m/%Y') + ' (' + day_name + '): '  + ' ' + temperature_min + ' - ' + temperature_max + " " + uv_index
+            date.strftime('%d/%m/%Y') + ' (' + day_name + '): '  + ' ' + summary + " " + temperature_min + ' - ' + temperature_max + " " + "with UV index:" + " " + uv_index
         )
         print()
 
 
 def print_header():
     print('---------------------------------')
-    print('     WEATHER FORECAST 1.O       ')
+    print('     WEATHER HISTORY 1.O       ')
     print('---------------------------------')
     print()
 
