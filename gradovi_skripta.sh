@@ -1,0 +1,1 @@
+grep -E -n 'title=' gradovi_ulaz.txt | sed -e 's/.*title=\"\(.*\)\".*/\1/' | grep -E -v -i '\W | ^\s' | sed -e '/.*županija.*/d' | sed -e 's/\(.*\)[(]\{1\}.*[)]\{1\}/\1/' | sed -e '/Grad Zagreb/d' > gradovi_izlaz.txt
