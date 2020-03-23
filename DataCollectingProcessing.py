@@ -57,7 +57,8 @@ def get_forecast_data(lat: str, lng: str):
     :param lng:
     :return:
     """
-    uri = DS_API_HOST + '/' + DS_API_KEY + '/' + str(lat) + ',' + str(lng)
+    time = "2018-10-24T19:06:32"
+    uri = DS_API_HOST + '/' + DS_API_KEY + '/' + str(lat) + ',' + str(lng) + ',' + time
     payload = {'lang': LANG, 'units': DS_UNITS}
     response = make_get_request(uri, payload)
 
@@ -74,7 +75,7 @@ def print_daily_forecast(geo, forecast):
     :param forecast:
     """
     print('Getting Forecast for: ' + geo['formatted_address'])
-    print('Weekly Summary: ' + forecast['summary'])
+    #print('Weekly Summary: ' + forecast['summary'])
     print()
 
     for day in forecast['data']:
@@ -85,12 +86,12 @@ def print_daily_forecast(geo, forecast):
         else:
             day_name = date.strftime("%A")
 
-        summary = day['summary']
+        #summary = day['summary']
         temperature_min = str(round(day['temperatureMin'])) + 'ºC'
         temperature_max = str(round(day['temperatureMax'])) + 'ºC'
+        uv_index = str(round(day["uvIndex"]))
         print(
-            date.strftime('%d/%m/%Y') + ' (' + day_name + '): ' +
-            summary + ' ' + temperature_min + ' - ' + temperature_max
+            date.strftime('%d/%m/%Y') + ' (' + day_name + '): '  + ' ' + temperature_min + ' - ' + temperature_max + " " + uv_index
         )
         print()
 
@@ -115,6 +116,7 @@ def main():
         exit('Error: Address not found or invalid response')
 
     forecast_data = get_forecast_data(geo_data['lat'], geo_data['lng'])
+    print(forecast_data)
 
     if not forecast_data:
         exit('Error: Forecast not found or invalid response')
