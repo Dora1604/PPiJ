@@ -35,3 +35,13 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.route('/proba')
+def proba():
+    """Renders the contact page."""
+    return render_template(
+        'proba.html',
+        title='Proba',
+        year=datetime.now().year,
+        message='Your contact page.'
+    )

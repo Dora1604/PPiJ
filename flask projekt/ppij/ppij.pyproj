@@ -41,6 +41,15 @@
     <Folder Include="ppij\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ppij\static\content\proba.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="ppij\static\scripts\proba.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="ppij\templates\proba.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="requirements.txt" />
     <Content Include="ppij\static\content\bootstrap.css" />
     <Content Include="ppij\static\content\bootstrap.min.css" />
