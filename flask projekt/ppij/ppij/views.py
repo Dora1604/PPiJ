@@ -11,7 +11,7 @@ from ppij import app
 def home():
     """Renders the home page."""
     return render_template(
-        'index.html',
+        'noviindex.html',
         title='Home Page',
         year=datetime.now().year,
     )
@@ -51,6 +51,28 @@ def novi():
     """Renders the contact page."""
     return render_template(
         'noviindex.html',
+        title='Index',
+        year=datetime.now().year,
+        message='Your contact page.'
+    )
+
+
+@app.route('/opcija1')
+def opcija1():
+    """Renders the contact page."""
+    return render_template(
+        'opcija1.html',
+        title='Index',
+        year=datetime.now().year,
+        message='Your contact page.'
+    )
+
+
+@app.route('/opcija2')
+def opcija2():
+    """Renders the contact page."""
+    return render_template(
+        'opcija2.html',
         title='Index',
         year=datetime.now().year,
         message='Your contact page.'

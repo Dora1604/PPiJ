@@ -3,15 +3,26 @@
 </head>
 
 
-<section class="xop-container">
-    <div class="xop-left">
-        <article>
-            <h1>Opcija 1</h1>
-        </article>
-    </div>
-    <div class="xop-right">
-        <article>
-            <h1>Opcija 2</h1>
-        </article>
-    </div>
-</section>
+<div class="xop-container">
+    <a href="{{ url_for('opcija1') }}">
+        <div class="xop-left">
+            <article>
+                <h1>When you know</h1>
+                <h1>the date, but want</h1>
+                <h1>to choose the right destination...</h1>
+            </article>
+            <div id="logo">
+                <img src="../static/images/rsz_gleen.jpg" />
+            </div>
+        </div>
+    </a>
+    <a href="{{ url_for('opcija2') }}">
+        <div class="xop-right">
+            <article id="bottom">
+                <h1>... or when you know</h1>
+                <h1>where you want to go but</h1>
+                <h1>you are not sure when.</h1>
+            </article>
+        </div>
+    </a>    
+</div>

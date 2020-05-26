@@ -46,7 +46,10 @@
     <Content Include="ppij\static\content\proba.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="ppij\static\images\gleen.jpeg" />
+    <Content Include="ppij\static\images\proba.jpeg" />
     <Content Include="ppij\static\images\rovinj.jpg" />
+    <Content Include="ppij\static\images\rsz_gleen.jpg" />
     <Content Include="ppij\static\images\zagreb.jpg" />
     <Content Include="ppij\static\scripts\css\demo.css" />
     <Content Include="ppij\static\scripts\css\font-awesome.min.css" />
@@ -57,6 +60,12 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="ppij\templates\noviindex.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="ppij\templates\opcija1.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="ppij\templates\opcija2.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="ppij\templates\proba.html">
