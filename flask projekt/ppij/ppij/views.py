@@ -77,3 +77,13 @@ def opcija2():
         year=datetime.now().year,
         message='Your contact page.'
     )
+
+@app.route('/probaindex')
+def probaindex():
+    """Renders the contact page."""
+    return render_template(
+        'probaindex.html',
+        title='Index',
+        year=datetime.now().year,
+        message='Your contact page.'
+    )

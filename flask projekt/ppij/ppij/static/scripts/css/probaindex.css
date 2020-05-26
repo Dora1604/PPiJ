@@ -1,0 +1,80 @@
+
+#logo {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 3%;
+}
+
+#logo_boja{
+    width: 100%;
+    height: 50%;
+    background-color: #FEED67;
+    margin: 0 0 0 0;
+}
+
+#logo_donji {
+    position: relative;
+    height: 20%;
+}
+
+#logo_slika {
+    width: 14%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    border: 7px solid #FEED67;
+}
+
+#description {
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    line-height: 1.5;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 1.8rem;
+}
+
+
+#options {
+    width: 100%;
+    margin: 0 0 0 0;
+    display: flex;
+    border-top: 2px solid #F46710;
+    border-bottom: 2px solid #F46710;
+}
+
+
+#left_option {
+    background-color: #ffffa3;
+    flex: 1;
+    line-height: 0.3;
+    font-family: 'Baloo Chettan 2', cursive;
+    text-align: left;
+    padding-left: 3%;
+    padding: 5% 5% 5% 5%;
+    background-color: black;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+#right_option {
+    background-color: #ffffe0;
+    flex: 1;
+    line-height: 0.3;
+    font-family: 'Baloo Chettan 2', cursive;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 3%;
+    padding: 5% 5% 5% 5%;
+    background-color: black;
+    border-radius: 50%;
+    height: 100%;
+    width: 50%;
+}

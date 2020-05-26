@@ -47,6 +47,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="ppij\static\images\gleen.jpeg" />
+    <Content Include="ppij\static\images\gleen21.jpeg" />
+    <Content Include="ppij\static\images\gleen221.jpeg" />
     <Content Include="ppij\static\images\proba.jpeg" />
     <Content Include="ppij\static\images\rovinj.jpg" />
     <Content Include="ppij\static\images\rsz_gleen.jpg" />
@@ -55,6 +57,9 @@
     <Content Include="ppij\static\scripts\css\font-awesome.min.css" />
     <Content Include="ppij\static\scripts\css\normalize.css" />
     <Content Include="ppij\static\scripts\css\noviindex.css" />
+    <Content Include="ppij\static\scripts\css\probaindex.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="ppij\static\scripts\css\xopixel.css" />
     <Content Include="ppij\static\scripts\proba.js">
       <SubType>Code</SubType>
@@ -69,6 +74,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="ppij\templates\proba.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="ppij\templates\probaindex.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="requirements.txt" />
