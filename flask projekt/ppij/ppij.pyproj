@@ -37,14 +37,26 @@
     <Folder Include="ppij\static\" />
     <Folder Include="ppij\static\content\" />
     <Folder Include="ppij\static\fonts\" />
+    <Folder Include="ppij\static\images\" />
     <Folder Include="ppij\static\scripts\" />
+    <Folder Include="ppij\static\scripts\css\" />
     <Folder Include="ppij\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ppij\static\content\proba.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="ppij\static\images\rovinj.jpg" />
+    <Content Include="ppij\static\images\zagreb.jpg" />
+    <Content Include="ppij\static\scripts\css\demo.css" />
+    <Content Include="ppij\static\scripts\css\font-awesome.min.css" />
+    <Content Include="ppij\static\scripts\css\normalize.css" />
+    <Content Include="ppij\static\scripts\css\noviindex.css" />
+    <Content Include="ppij\static\scripts\css\xopixel.css" />
     <Content Include="ppij\static\scripts\proba.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="ppij\templates\noviindex.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="ppij\templates\proba.html">

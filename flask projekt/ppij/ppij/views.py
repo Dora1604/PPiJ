@@ -45,3 +45,13 @@ def proba():
         year=datetime.now().year,
         message='Your contact page.'
     )
+
+@app.route('/novi')
+def novi():
+    """Renders the contact page."""
+    return render_template(
+        'noviindex.html',
+        title='Index',
+        year=datetime.now().year,
+        message='Your contact page.'
+    )
