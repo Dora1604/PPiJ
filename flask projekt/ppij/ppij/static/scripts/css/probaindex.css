@@ -41,40 +41,34 @@
 
 #options {
     width: 100%;
+    height: 30%;
     margin: 0 0 0 0;
+    background-color: blue;
     display: flex;
-    border-top: 2px solid #F46710;
-    border-bottom: 2px solid #F46710;
 }
 
+.article {
+ 
+}
 
 #left_option {
-    background-color: #ffffa3;
+    background-color: #FEED67;
     flex: 1;
-    line-height: 0.3;
+    line-height: 0.2;
     font-family: 'Baloo Chettan 2', cursive;
-    text-align: left;
-    padding-left: 3%;
-    padding: 5% 5% 5% 5%;
-    background-color: black;
-    border-radius: 50%;
-    height: 100%;
-    width: 100%;
+    padding-left: 2%;
+    font-size: 0.5rem;
 }
 
 #right_option {
+    padding-right: 2%;
     background-color: #ffffe0;
     flex: 1;
-    line-height: 0.3;
-    font-family: 'Baloo Chettan 2', cursive;
-    text-align: right;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 3%;
-    padding: 5% 5% 5% 5%;
-    background-color: black;
-    border-radius: 50%;
-    height: 100%;
-    width: 50%;
+    line-height: 0.2;
+    text-align: right;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 0.5rem;
 }

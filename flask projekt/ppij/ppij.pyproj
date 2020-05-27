@@ -40,6 +40,7 @@
     <Folder Include="ppij\static\images\" />
     <Folder Include="ppij\static\scripts\" />
     <Folder Include="ppij\static\scripts\css\" />
+    <Folder Include="ppij\static\scripts\js\" />
     <Folder Include="ppij\templates\" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +62,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="ppij\static\scripts\css\xopixel.css" />
+    <Content Include="ppij\static\scripts\js\probaindex.js" />
     <Content Include="ppij\static\scripts\proba.js">
       <SubType>Code</SubType>
     </Content>

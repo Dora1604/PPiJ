@@ -11,7 +11,7 @@ from ppij import app
 def home():
     """Renders the home page."""
     return render_template(
-        'noviindex.html',
+        'probaindex.html',
         title='Home Page',
         year=datetime.now().year,
     )
