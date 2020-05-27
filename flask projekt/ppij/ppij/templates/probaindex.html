@@ -1,9 +1,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/static/scripts/css/probaindex.css" />
 
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link rel='stylesheet' href='https://rawgit.com/tempusdominus/bootstrap-4/master/build/css/tempusdominus-bootstrap-4.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/css/style.css"></script>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
 </head>
@@ -47,24 +47,44 @@
         </div>
     </div>
 
+    <!--
+
+
+
+        --litepickerDayIsBookedColor: grey !important;
+        --litepickerDayIsStartColor: black !important;
+        --litepickerDayIsStartBg: red !important;
+        --litepickerDayIsEndColor: orange !important;
+        --litepickerDayIsEndBg: blue !important;
+        --litepickerDayWidth: magenta !important;
+
+
+
+
+        -->
+
     <div id="option1" style="display:none;">
         Opcija 1!
         <div id="opt1search">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" />
-                                <span class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                    <span class="fa fa-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="showstartdate"></div>
+            <div id="showenddate"></div>
+
+
+            <br>
+            <br>
+
+            <input id="datepicker" />
+            <style>
+
+                :root {
+                    --litepickerDayIsStartBg: #F46710 !important;
+                    --litepickerMonthButtonHover: #F46710 !important;
+                    --litepickerDayColorHover: #F46710 !important;
+                    --litepickerDayIsInRange: #F8A63F !important;
+                    --litepickerDayIsEndBg: #F46710 !important;
+                }
+            </style>
 
 
         </div>

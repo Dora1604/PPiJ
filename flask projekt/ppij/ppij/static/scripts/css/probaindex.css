@@ -57,7 +57,7 @@
     line-height: 0.2;
     font-family: 'Baloo Chettan 2', cursive;
     padding-left: 2%;
-    font-size: 0.5rem;
+    font-size: 1.2rem;
 }
 
 #right_option {
@@ -70,5 +70,14 @@
     line-height: 0.2;
     text-align: right;
     font-family: 'Baloo Chettan 2', cursive;
-    font-size: 0.5rem;
+    font-size: 1.2rem;
+}
+
+
+#option1{
+    height: 800px;
+}
+
+.is-start-date{
+    background-color: red;
 }

@@ -8,6 +8,13 @@ function showOption2() {
     document.getElementById('option1').style.display = "none";
 }
 
-$('#datetimepicker1').datetimepicker({
-    locale: 'fr'
-});	
+new Litepicker({
+    element: document.getElementById('datepicker'),
+    singleMode: false,
+    firstDay: 1,
+    format: "DD.MM.YYYY.",
+    onSelect(date1, date2) {
+        document.getElementById('showstartdate').innerText = date1.toDateString();
+        document.getElementById('showenddate').innerText = date2.toDateString();
+    }
+})
