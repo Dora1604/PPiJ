@@ -48,6 +48,7 @@
     display: flex;
     box-sizing: border-box;
     position: relative;
+    padding-bottom: 3%;
 }
 
 .article {
@@ -148,6 +149,16 @@
     display: block;
 }
 
+
+.otheroption {
+    float: left;
+    margin-left: 5%;
+}
+
+.chooseagain{
+    float: right;
+    margin-right: 5%;
+}
 
 .button {
     display: inline-block;

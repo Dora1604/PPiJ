@@ -30,7 +30,7 @@
             Whether you want to visit some of the most beautiful beaches in the world or want be a part of a winter fairy tale in Zagreb,
             Gleen will give you an <span style="color:#F46710">overview of expected daily temperatures</span> so you can organize and pack for your holiday accordingly.
         </p>
-        <p>To get started, please <span style="color:#F46710">choose one of the two options</span> listed below:</p>
+        <p id="optionsp">To get started, please <span style="color:#F46710">choose one of the two options</span> listed below:</p>
     </div>
 
     <div id="options">
@@ -44,7 +44,6 @@
             </div>
         </div>
         <div id="right_option" onclick="showOption2()" role="button">
-            <a href="#opton2"></a>
             <div>
                 <article id="left">
                     <p>... or <span style="color:#F46710">you know</span></p>
@@ -148,7 +147,10 @@
         </div>
 
         <div id="opt1export">
-            <a class="button">Export to PDF</a>
+
+            <a class="button otheroption"  onclick="options()">Choose option</a>
+            <a class="button pdf">Export to PDF</a>
+            <a class="button chooseagain"  onclick="newDate()">Choose new date</a>
         </div>
 
 

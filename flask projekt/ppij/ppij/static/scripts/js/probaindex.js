@@ -4,7 +4,15 @@ function showOption1() {
     var element = document.querySelector("#option1");
     element.scrollIntoView({ behavior: 'smooth' });
 }
+function options() {
+    var element = document.querySelector("#optionsp");
+    element.scrollIntoView({ behavior: 'smooth' });
+}
 
+function newDate() {
+    var element = document.querySelector("#option1");
+    element.scrollIntoView({ behavior: 'smooth' });
+}
 
 function showOption2() {
     document.getElementById('option2').style.display = "block";
