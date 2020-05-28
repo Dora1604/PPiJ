@@ -1,11 +1,16 @@
 function showOption1() {
     document.getElementById('option1').style.display = "block";
     document.getElementById('option2').style.display = "none";
+    var element = document.querySelector("#option1");
+    element.scrollIntoView({ behavior: 'smooth' });
 }
+
 
 function showOption2() {
     document.getElementById('option2').style.display = "block";
     document.getElementById('option1').style.display = "none";
+    var element = document.querySelector("#option2");
+    element.scrollIntoView({ behavior: 'smooth' });
 }
 
 new Litepicker({
@@ -18,3 +23,4 @@ new Litepicker({
         document.getElementById('showenddate').innerText = date2.toDateString();
     }
 })
+

@@ -1,4 +1,6 @@
 
+
+
 #logo {
     width: 100%;
     height: 40%;
@@ -43,12 +45,17 @@
     width: 100%;
     height: 30%;
     margin: 0 0 0 0;
-    background-color: blue;
     display: flex;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .article {
  
+}
+
+#right{
+    padding-top: 3%;
 }
 
 #left_option {
@@ -57,7 +64,11 @@
     line-height: 0.2;
     font-family: 'Baloo Chettan 2', cursive;
     padding-left: 2%;
-    font-size: 1.2rem;
+    border-radius: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 2.2vw;
+    
 }
 
 #right_option {
@@ -70,7 +81,11 @@
     line-height: 0.2;
     text-align: right;
     font-family: 'Baloo Chettan 2', cursive;
-    font-size: 1.2rem;
+    border-radius: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 2.2vw;
+    
 }
 
 
@@ -105,6 +120,7 @@
 
 .resultinner {
     border: 3px solid #FEED67;
+    border-radius: 10px;
 }
 
 .destinationname {
@@ -191,4 +207,8 @@
     padding-bottom: 10%;
     color: #ffffe0;
 }
+
+
+
+
 
