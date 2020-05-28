@@ -54,6 +54,7 @@
     <Content Include="ppij\static\images\rovinj.jpg" />
     <Content Include="ppij\static\images\rsz_gleen.jpg" />
     <Content Include="ppij\static\images\zagreb.jpg" />
+    <Content Include="ppij\static\images\zgb.jpg" />
     <Content Include="ppij\static\scripts\css\demo.css" />
     <Content Include="ppij\static\scripts\css\font-awesome.min.css" />
     <Content Include="ppij\static\scripts\css\normalize.css" />

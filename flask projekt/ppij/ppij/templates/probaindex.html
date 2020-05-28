@@ -1,11 +1,14 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/static/scripts/css/probaindex.css" />
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/css/style.css"></script>
 
 
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -64,16 +67,15 @@
         -->
 
     <div id="option1" style="display:none;">
-        Opcija 1!
         <div id="opt1search">
+            <!--
+        <div id="showstartdate"></div>
+        <div id="showenddate"></div>
 
-            <div id="showstartdate"></div>
-            <div id="showenddate"></div>
 
-
-            <br>
-            <br>
-
+        <br>
+        <br>
+    -->
             <input id="datepicker" />
             <style>
 
@@ -88,11 +90,60 @@
 
 
         </div>
-        <div>
-            rezultati
+
+        <div id="opt1results">
+            <div class="row">
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            ZAGREB
+                        </div>
+
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+
+                        <div class="destinationname">
+                            //
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            ZAGREB
+                        </div>
+
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+
+                        <div class="destinationname">
+                           //
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            ZAGREB
+                        </div>
+
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            izvoz u pdf
+
+        <div id="opt1export">
+            <a class="button">Export to PDF</a>
         </div>
 
 

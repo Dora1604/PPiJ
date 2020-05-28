@@ -74,10 +74,121 @@
 }
 
 
-#option1{
+#option1 {
     height: 800px;
+    text-align: center;
 }
 
-.is-start-date{
-    background-color: red;
+#opt1search{
+    padding-top: 10%;
+    text-align: center;
 }
+
+#datepicker {
+    width: 30%;
+    border: none;
+    border-bottom: 1px solid #083d77;
+    text-align: center;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 1.2rem;
+}
+
+#opt1results {
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.result {
+    height: 500px;
+}
+
+.resultinner {
+    border: 3px solid #FEED67;
+}
+
+.destinationname {
+    width: 100%;
+    height: 10%;
+    background-color: #FEED67;
+    text-align: center;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 1.2rem;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    color: #F46710;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.destinationimage{
+    width: 100%;
+}
+
+.imgresult {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+
+.button {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: orange;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+    .button:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #083d77;
+        border-radius: 10rem;
+        z-index: -2;
+    }
+
+    .button:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: #042447;
+        transition: all .3s;
+        border-radius: 10rem;
+        z-index: -1;
+    }
+
+    .button:hover {
+        color: green;
+    }
+
+        .button:hover:before {
+            width: 100%;
+        }
+
+/* optional reset for presentation */
+
+
+#opt1export {
+    padding-top: 10%;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10%;
+    color: #ffffe0;
+}
+
