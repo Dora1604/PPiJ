@@ -1,6 +1,4 @@
 
-
-
 #logo {
     width: 100%;
     height: 40%;
@@ -40,6 +38,19 @@
     font-size: 1.8rem;
 }
 
+.optionsbootstrapcont{
+    width: 100%;
+    height: 10%;
+   padding: 0 0 0 0;
+   margin: 0 0 0 0;
+}
+
+#optionsbootstrap {
+    width: 100%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
 
 #options {
     width: 100%;
@@ -65,15 +76,14 @@
     line-height: 0.2;
     font-family: 'Baloo Chettan 2', cursive;
     padding-left: 2%;
-    border-radius: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
     font-size: 2.2vw;
     
 }
 
+
+
 #right_option {
-    padding-right: 2%;
+    
     background-color: #ffffe0;
     flex: 1;
     display: flex;
@@ -82,11 +92,8 @@
     line-height: 0.2;
     text-align: right;
     font-family: 'Baloo Chettan 2', cursive;
-    border-radius: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding-right: 2%;
     font-size: 2.2vw;
-    
 }
 
 
@@ -151,14 +158,20 @@
 
 
 .otheroption {
-    float: left;
-    margin-left: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
-.chooseagain{
-    float: right;
-    margin-right: 5%;
+.chooseagain {
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
+
+.pdf {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
 
 .button {
     display: inline-block;
@@ -207,7 +220,6 @@
             width: 100%;
         }
 
-/* optional reset for presentation */
 
 
 #opt1export {
@@ -219,7 +231,17 @@
     color: #ffffe0;
 }
 
+#opt2export {
+    padding-top: 10%;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10%;
+    color: #ffffe0;
+}
 
-
+.dropdown {
+    text-align: center;
+}
 
 

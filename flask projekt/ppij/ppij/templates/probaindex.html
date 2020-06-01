@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/static/scripts/css/probaindex.css" />
-
+    <script type="text/javascript" src="../static/scripts/jquery-1.10.2.js"></script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/css/style.css"></script>
@@ -33,26 +34,30 @@
         <p id="optionsp">To get started, please <span style="color:#F46710">choose one of the two options</span> listed below:</p>
     </div>
 
-    <div id="options">
-        <div id="left_option" onclick="showOption1()" role="button">
-            <div id="right">
-                <article>
-                    <p><span style="color:#F46710">You know the</span></p>
-                    <p><span style="color:#F46710">date</span> but want to</p>
-                    <p>choose the right destination...</p>
-                </article>
+   
+    <div class="optionsbootstrapcont">
+        <div class="row" id="optionsbootstrap">
+            <div id="left_option" onclick="showOption1()" role="button" class="col-sm-6">
+                <div id="right">
+                    <article>
+                        <p><span style="color:#F46710">You know the</span></p>
+                        <p><span style="color:#F46710">date</span> but want to</p>
+                        <p>choose the right destination...</p>
+                    </article>
+                </div>
             </div>
-        </div>
-        <div id="right_option" onclick="showOption2()" role="button">
-            <div>
-                <article id="left">
-                    <p>... or <span style="color:#F46710">you know</span></p>
-                    <p><span style="color:#F46710">where you want to go</span></p>
-                    <p>but you are not sure when.</p>
-                </article>
+            <div id="right_option" onclick="showOption2()" role="button" class="col-sm-6">
+                <div>
+                    <article id="left">
+                        <p>... or <span style="color:#F46710">you know</span></p>
+                        <p><span style="color:#F46710">where you want to go</span></p>
+                        <p>but you are not sure when.</p>
+                    </article>
+                </div>
             </div>
         </div>
     </div>
+
 
     <!--
 
@@ -148,9 +153,19 @@
 
         <div id="opt1export">
 
-            <a class="button otheroption"  onclick="options()">Choose option</a>
-            <a class="button pdf">Export to PDF</a>
-            <a class="button chooseagain"  onclick="newDate()">Choose new date</a>
+            <div class="container buttons">
+                <div class="row">
+                    <div class="col-sm" id="left_button">
+                        <a class="button otheroption" onclick="options()">Choose option</a>
+                    </div>
+                    <div class="col-sm" id="pdf">
+                        <a class="button pdf">Export to PDF</a>
+                    </div>
+                    <div class="col-sm" id="right_button">
+                        <a class="button chooseagain" onclick="newDate()">Choose new date</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -158,7 +173,42 @@
 
     </div>
     <div id="option2" style="display:none;">
-        Opcija 2!
+
+        <div id="opt2search">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="opt2res">
+
+        </div>
+
+        <div id="opt2export">
+
+            <div class="container buttons">
+                <div class="row">
+                    <div class="col-sm" id="left_button">
+                        <a class="button otheroption" onclick="options()">Choose option</a>
+                    </div>
+                    <div class="col-sm" id="pdf">
+                        <a class="button pdf">Export to PDF</a>
+                    </div>
+                    <div class="col-sm" id="right_button">
+                        <a class="button chooseagain" onclick="newDest()">Choose new destination</a>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+
     </div>
 
 
