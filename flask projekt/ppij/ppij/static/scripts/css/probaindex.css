@@ -165,6 +165,7 @@
 .chooseagain {
     padding-top: 3%;
     padding-bottom: 3%;
+    float: right;
 }
 
 .pdf {
@@ -240,8 +241,29 @@
     color: #ffffe0;
 }
 
-.dropdown {
+.dropdownDest {
+    text-align: center;
+}
+
+.dropdownSeason{
     text-align: center;
 }
 
 
+#month1 {
+    background-color: #FEED67;
+    padding: 2px 2px 2px 2px;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+#month2 {
+    background-color: #ffffe0;
+    padding: 2px 2px 2px 2px;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+#month3 {
+    background-color: #FEED67;
+    padding: 2px 2px 2px 2px;
+    font-family: 'Baloo Chettan 2', cursive;
+}

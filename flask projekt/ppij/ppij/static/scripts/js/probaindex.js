@@ -27,6 +27,27 @@ function showOption2() {
     element.scrollIntoView({ behavior: 'smooth' });
 }
 
+
+function month1() {
+    document.getElementById('month1res').style.display = "block";
+    var element = document.querySelector("#month1res");
+    element.scrollIntoView({ behavior: 'smooth' });
+}
+
+function month2() {
+    document.getElementById('month2res').style.display = "block";
+    var element = document.querySelector("#month2res");
+    element.scrollIntoView({ behavior: 'smooth' });
+}
+
+function month3() {
+    document.getElementById('month3res').style.display = "block";
+    var element = document.querySelector("#month3res");
+    element.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+
 new Litepicker({
     element: document.getElementById('datepicker'),
     singleMode: false,
@@ -37,4 +58,6 @@ new Litepicker({
         document.getElementById('showenddate').innerText = date2.toDateString();
     }
 })
+
+
 

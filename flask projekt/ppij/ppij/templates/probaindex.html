@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/static/scripts/css/probaindex.css" />
     <script type="text/javascript" src="../static/scripts/jquery-1.10.2.js"></script>
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/css/style.css"></script>
@@ -9,6 +9,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <html>
@@ -89,6 +91,18 @@
         
         @media screen and (max-width: 600px) {
           .column {
+            width: 100%;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          #left_option {
+            width: 100%;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          #right_option {
             width: 100%;
           }
         }
@@ -191,14 +205,14 @@
 
             <div class="container buttons">
                 <div class="row">
-                    <div class="col-sm" id="left_button">
-                        <a class="button otheroption" onclick="options()">Choose option</a>
+                    <div class="col-sm">
+                        ''
                     </div>
                     <div class="col-sm" id="pdf">
                         <a class="button pdf">Export to PDF</a>
                     </div>
                     <div class="col-sm" id="right_button">
-                        <a class="button chooseagain" onclick="newDate()">Choose new date</a>
+                        <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
                     </div>
                 </div>
             </div>
@@ -211,38 +225,140 @@
     <div id="option2" style="display:none;">
 
         <div id="opt2search">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+
+            <div class="row">
+                <div class="col-sm">
+
+                </div>
+                <div class="col-sm">
+                    <div class="dropdownDest">
+                        <select name="dest" id="dest">
+                            <option value="Zagreb">Zagreb</option>
+                            <option value="Split">Split</option>
+                            <option value="Pula">Pula</option>
+                            <option value="Osijek">Osijek</option>
+                        </select>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="dropdownSeason">
+                        <select name="season" id="season">
+                            <option value="ljeto">ljeto</option>
+                            <option value="jesen">jesen</option>
+                            <option value="zima">zima</option>
+                            <option value="proljece">proljece</option>
+                        </select>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="col-sm">
+
                 </div>
             </div>
+
+
+
+
         </div>
+
 
         <div id="opt2res">
+            <button type="button" class="collapsible">MONTH 1</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <button type="button" class="collapsible" id="middlemonth">MONTH 2</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <button type="button" class="collapsible">MONTH 3</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
 
         </div>
+
+
+        <style>
+            .collapsible {
+                background-color: #FEED67;
+                padding: 2px 2px 2px 2px;
+                font-family: 'Baloo Chettan 2', cursive;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
+            #middlemonth{
+                background-color: #ffffe0;
+                padding: 2px 2px 2px 2px;
+                font-family: 'Baloo Chettan 2', cursive;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
+                .active, .collapsible:hover {
+                    background-color: #FEED67;
+                    border:none;
+                }
+
+            .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: white;
+            }
+        </style>
+
+        
+        
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+
+
+
+
+
+
+
 
         <div id="opt2export">
 
             <div class="container buttons">
                 <div class="row">
-                    <div class="col-sm" id="left_button">
-                        <a class="button otheroption" onclick="options()">Choose option</a>
+                    <div class="col-sm">
+                        ''
                     </div>
                     <div class="col-sm" id="pdf">
                         <a class="button pdf">Export to PDF</a>
                     </div>
                     <div class="col-sm" id="right_button">
-                        <a class="button chooseagain" onclick="newDest()">Choose new destination</a>
+                        <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
                     </div>
                 </div>
             </div>
-  
+
         </div>
 
     </div>
