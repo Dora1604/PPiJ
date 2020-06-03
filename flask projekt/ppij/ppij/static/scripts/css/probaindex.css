@@ -76,8 +76,7 @@
     line-height: 0.2;
     font-family: 'Baloo Chettan 2', cursive;
     padding-left: 2%;
-    font-size: 2.2vw;
-    
+    font-size: 1.8rem;
 }
 
 
@@ -96,6 +95,28 @@
     font-size: 2.2vw;
 }
 
+
+#lijevinovi {
+    background-color: #FEED67;
+    line-height: 0.2;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 1.5rem;
+    padding-top: 2%;
+}
+
+#desninovi {
+    background-color: #ffffe0;
+    line-height: 0.2;
+    text-align: right;
+    font-family: 'Baloo Chettan 2', cursive;
+    padding-right: 2%;
+    font-size: 1.5rem;
+    padding-top: 5%;
+}
+
+.container{
+    margin-bottom: 2%;
+}
 
 #option1 {
     height: 800px;
