@@ -12,6 +12,8 @@
 
 # split the dataset
 from pandas import read_csv
+from statsmodels.compat import numpy
+
 series = read_csv('daily-minimum-temperatures.csv', header=0, index_col=0)
 split_point = len(series) - 7
 dataset, validation = series[0:split_point], series[split_point:]

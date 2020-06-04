@@ -6,13 +6,14 @@ import numpy
 def difference(dataset, interval=1):
 	diff = list()
 	for i in range(interval, len(dataset)):
-		value = dataset[i] - dataset[i - interval]
-		diff.append(value)
+		if i-interval != 0:
+			value = float(dataset[i]) - float(dataset[i - interval])
+			diff.append(value)
 	return numpy.array(diff)
 
 # invert differenced value
 def inverse_difference(history, yhat, interval=1):
-	return yhat + history[-interval]
+	return float(yhat) + float(history[-interval])
 
 # load dataset
 series = read_csv('dataset.csv', header=None)
