@@ -5,7 +5,8 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template
 from ppij import app
-from ppij import tony  
+from flask import Flask, render_template, request, redirect, Response
+import random, json 
 
 @app.route('/')
 @app.route('/home')
@@ -15,7 +16,7 @@ def home():
         'probaindex.html',
         title='Home Page',
         year=datetime.now().year,
-        name = tony.istina()
+        #name = tony.istina()
     )
 
 @app.route('/contact')
@@ -89,3 +90,13 @@ def probaindex():
         year=datetime.now().year,
         message='Your contact page.'
     )
+
+@app.route('/handle_data', methods=('GET', 'POST'))
+def handle_data():
+    tony3 = request.form['tony']
+    tonyNovi = tony3 + "je lijep"
+    tony4 = analiziraj(tonyNovi)
+    return tony4
+def analiziraj(tonyNovi):
+    t = tonyNovi+"da"
+    return t

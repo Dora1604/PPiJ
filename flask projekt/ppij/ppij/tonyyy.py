@@ -9,4 +9,5 @@ def istina():
                 return row[0]
             i += 1
 
-    
+
+
