@@ -5,6 +5,7 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template
 from ppij import app
+from ppij import tony  
 
 @app.route('/')
 @app.route('/home')
@@ -14,6 +15,7 @@ def home():
         'probaindex.html',
         title='Home Page',
         year=datetime.now().year,
+        name = tony.istina()
     )
 
 @app.route('/contact')
