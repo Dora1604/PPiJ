@@ -67,18 +67,6 @@
     <Content Include="ppij\static\scripts\proba.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="ppij\templates\noviindex.html">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="ppij\templates\opcija1.html">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="ppij\templates\opcija2.html">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="ppij\templates\proba.html">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="ppij\templates\probaindex.html">
       <SubType>Code</SubType>
     </Content>
@@ -105,10 +93,6 @@
     <Content Include="ppij\static\scripts\respond.js" />
     <Content Include="ppij\static\scripts\respond.min.js" />
     <Content Include="ppij\static\scripts\_references.js" />
-    <Content Include="ppij\templates\about.html" />
-    <Content Include="ppij\templates\contact.html" />
-    <Content Include="ppij\templates\index.html" />
-    <Content Include="ppij\templates\layout.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
