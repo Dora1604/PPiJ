@@ -11,10 +11,11 @@ from datetime import datetime
 
 @app.route('/')
 def home():
+     mapa = {}
      return render_template(
         'probaindex.html',
+        mapa = mapa
     )
-
 @app.route('/probaindex', methods=('GET', 'POST'))
 def probaindex():
      datum = request.form['datum']
@@ -24,10 +25,17 @@ def probaindex():
      durationBetweenDates = find_duration(datumi[0], datumi[1])
      fourthOfJune = "04.06.2020"
      dat1ToFourthOfJune = find_duration(datumi[0], fourthOfJune)
-     map = {'zagreb': 11.4, 'osijek': 11.4, 'pula': 11.4, 'split': 11.4, 'dubrovnik': 11.4, 'zadar': 11.4, 'rijeka': 11.4, 'sibenik': 11.4, 'varazdin': 11.4}
+     mapa = {'zagreb': 11.4, 'osijek': 11.4, 'pula': 11.4, 'split': 11.4, 'dubrovnik': 11.4, 'zadar': 11.4, 'rijeka': 11.4, 'sibenik': 11.4, 'varazdin': 11.4}
      return render_template(
         'probaindex.html',
+        mapa = mapa,
     )
+
+
+
+
+
+
 
 def find_duration(dat1, dat2):
     date1 = datetime.strptime(dat1, '%d.%m.%Y').date()
