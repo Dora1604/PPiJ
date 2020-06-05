@@ -1,17 +1,12 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/static/scripts/css/probaindex.css" />
     <script type="text/javascript" src="../static/scripts/jquery-1.10.2.js"></script>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/css/style.css"></script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <html>
 <body>
@@ -24,8 +19,10 @@
         </div>
     </div>
 
+    <form action="{{ url_for('probaindex') }}" method="post">
+
     <div id="description">
-        <p>Hi, welcome to <span style="color:#F46710">Gleen!</span></p>
+        <p>Hi, welcome to <span style="color:#F46710">Gleen! {{name}} </span></p>
         <p>
             Gleen is an app created to help you choose the right time of the year to <span style="color:#F46710">
                 visit Croatia
@@ -65,13 +62,11 @@
         }
     </style>
 
-
     <div id="option1" style="display:none;">
-        <div id="opt1search">
-            
-            <input id="datepicker" placeholder="Choose date" />
+        <div id="opt1search"> 
+            <input id="datepicker" placeholder="Choose date" name="datum" />
+            <input type="submit">
             <style>
-
                 :root {
                     --litepickerDayIsStartBg: #F46710 !important;
                     --litepickerMonthButtonHover: #F46710 !important;
@@ -80,38 +75,18 @@
                     --litepickerDayIsEndBg: #F46710 !important;
                 }
             </style>
-
-
         </div>
 
         <div id="opt1results">
-            <div class="row">
+            <div class="row" style="margin-bottom: 100px">
                 <div class="col-sm result">
                     <div class="resultinner">
                         <div class="destinationname">
                             ZAGREB
                         </div>
-
                         <div class="destinationimage">
                             <img class="imgresult" src="../static/images/zgb.jpg">
                         </div>
-
-                        <div class="destinationname">
-                            //
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-sm result">
-                    <div class="resultinner">
-                        <div class="destinationname">
-                            ZAGREB
-                        </div>
-
-                        <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
-                        </div>
-
                         <div class="destinationname">
                             //
                         </div>
@@ -120,13 +95,106 @@
                 <div class="col-sm result">
                     <div class="resultinner">
                         <div class="destinationname">
-                            ZAGREB
+                            OSIJEK
                         </div>
-
                         <div class="destinationimage">
                             <img class="imgresult" src="../static/images/zgb.jpg">
                         </div>
-
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            PULA
+                        </div>
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 100px">
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            SPLIT
+                        </div>
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            DUBROVNIK
+                        </div>
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            ZADAR
+                        </div>
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 100px">
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            RIJEKA
+                        </div>
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            ŠIBENIK
+                        </div>
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
+                        <div class="destinationname">
+                            //
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm result">
+                    <div class="resultinner">
+                        <div class="destinationname">
+                            VARAŽDIN
+                        </div>
+                        <div class="destinationimage">
+                            <img class="imgresult" src="../static/images/zgb.jpg">
+                        </div>
                         <div class="destinationname">
                             //
                         </div>
@@ -134,9 +202,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <div id="opt1export">
-
             <div class="container buttons">
                 <div class="row">
                     <div class="col-sm">
@@ -151,18 +219,11 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </div>
     <div id="option2" style="display:none;">
-
         <div id="opt2search">
-
             <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">
                 <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-
                 </div>
                 <div class="col-sm">
                     <div class="dropdownDest">
@@ -187,15 +248,9 @@
                     </div>
                 </div>
                 <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-
                 </div>
             </div>
-
-
-
-
         </div>
-
 
         <div id="opt2res">
             <button type="button" class="collapsible">MONTH 1</button>
@@ -214,9 +269,7 @@
             <div class="content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-
         </div>
-
 
         <style>
             .collapsible {
@@ -256,13 +309,9 @@
             }
         </style>
 
-
-
-
         <script>
             var coll = document.getElementsByClassName("collapsible");
             var i;
-
             for (i = 0; i < coll.length; i++) {
                 coll[i].addEventListener("click", function () {
                     this.classList.toggle("active");
@@ -276,10 +325,7 @@
             }
         </script>
 
-
-
         <div id="opt2export">
-
             <div class="container buttons">
                 <div class="row">
                     <div class="col-sm">
@@ -293,17 +339,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
-
-
-
-
-
-
+</form>
 
     <script src="../static/scripts/js/probaindex.js"></script>
     <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
@@ -311,8 +349,6 @@
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
     <script src='https://rawgit.com/tempusdominus/bootstrap-4/master/build/js/tempusdominus-bootstrap-4.min.js'></script>
-
-
 
 </body>
 </html>
