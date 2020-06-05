@@ -17,6 +17,7 @@ def inverse_difference(history, yhat, interval=1):
 
 # load dataset
 series = read_csv('dataset.csv', header=None)
+series.dropna(inplace=True)
 # seasonal difference
 X = series.values
 days_in_year = 365

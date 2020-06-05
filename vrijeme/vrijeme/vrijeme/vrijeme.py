@@ -14,11 +14,11 @@
 from pandas import read_csv
 from statsmodels.compat import numpy
 
-series = read_csv('daily-minimum-temperatures.csv', header=0, index_col=0)
+series = read_csv('dub1.csv', header=0, index_col=0)
 split_point = len(series) - 7
 dataset, validation = series[0:split_point], series[split_point:]
 print('Dataset %d, Validation %d' % (len(dataset), len(validation)))
-dataset.to_csv('dataset.csv', index=False)
+dataset.to_csv('dataset.csv', index=False,sep=";")
 validation.to_csv('validation.csv', index=False)
 
 
