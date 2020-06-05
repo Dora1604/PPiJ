@@ -15,7 +15,7 @@ def difference(dataset, interval=1):
 def inverse_difference(history, yhat, interval=1):
 	return float(yhat) + float(history[-interval])
 
-def main(dataset):
+def main(dataset,days):
     openfile = "{}.csv".format(dataset)
     series = read_csv(openfile, header=None)
     series.dropna(inplace=True)
@@ -23,12 +23,13 @@ def main(dataset):
     X = series.values
     days_in_year = 365
     differenced = difference(X, days_in_year)
+    print(differenced)
     # fit model
     model = ARIMA(differenced, order=(7,0,1))
     model_fit = model.fit(disp=0)
     # multi-step out-of-sample forecast
     start_index = len(differenced)
-    end_index = start_index + 50
+    end_index = start_index + days
     forecast = model_fit.predict(start=start_index, end=end_index)
     # invert the differenced forecast to something usable
     history = [x for x in X]
@@ -38,4 +39,4 @@ def main(dataset):
         print('Day %d: %f' % (day, inverted))
         history.append(inverted)
         day += 1
-main("dataset")
+main("dataset",3)
