@@ -295,7 +295,8 @@
                                     <option value="split">SPLIT</option>
                                     <option value="dubrovnik">DUBROVNIK</option>
                                     <option value="zadar">ZADAR</option>
-                                    <option value="rijeka">RIJEKA<option>
+                                    <option value="rijeka">RIJEKA
+                                    <option>
                                     <option value="varazdin">VARAŽDIN</option>
                                     <option value="sibenik">ŠIBENIK</option>
                                 </select>
@@ -318,9 +319,11 @@
                     <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
                     </div>
                 </div>
+                <input type="submit" style="margin-top:5%" class="button pdf" onclick="showresultsOPtion2()">
+                <input type="button" onclick="showresultsOPtion2()" />
             </div>
 
-            <div id="opt2res">
+            <div id="opt2res" style="display:none;">
                 <button type="button" class="collapsible">MONTH 1</button>
                 <div class="content">
                     <p>Date: 7.7.2021. Temp: 32 Deegres Celsius</p>
@@ -336,6 +339,21 @@
                 <button type="button" class="collapsible">MONTH 3</button>
                 <div class="content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div id="opt2export">
+                    <div class="container buttons">
+                        <div class="row">
+                            <div class="col-sm">
+                                ''
+                            </div>
+                            <div class="col-sm" id="pdf">
+                                <a class="button pdf">Export to PDF</a>
+                            </div>
+                            <div class="col-sm" id="right_button">
+                                <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -393,21 +411,7 @@
                 }
             </script>
 
-            <div id="opt2export">
-                <div class="container buttons">
-                    <div class="row">
-                        <div class="col-sm">
-                            ''
-                        </div>
-                        <div class="col-sm" id="pdf">
-                            <a class="button pdf">Export to PDF</a>
-                        </div>
-                        <div class="col-sm" id="right_button">
-                            <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </form>
 
