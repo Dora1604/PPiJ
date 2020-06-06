@@ -36,22 +36,49 @@ def pdf_template(project, location):
 
 @app.route('/probaindex', methods=('GET', 'POST'))
 def probaindex():
-     datum = request.form['datum']
-     datumi = datum.split('-')
-     datumi[0] = datumi[0].strip()
-     datumi[1] = datumi[1].strip()
-     durationBetweenDates = find_duration(datumi[0], datumi[1])
-     fourthOfJune = "04.06.2020"
-     dat1ToFourthOfJune = find_duration(datumi[0], fourthOfJune)
-     lista_gradova = ["dubrovnik","gospic","zadar","sibenik","osijek","pula","rijeka","split","varazdin","zagreb"]
-     lista_gradova.sort()
-     mapa = {}
-     for grad in lista_gradova:
-         mapa[grad] = first_option(grad,durationBetweenDates,dat1ToFourthOfJune)
-     return render_template(
+    mapa = {}
+    datum = request.form['datum']
+    if datum != "":
+        datumi = datum.split('-')
+        datumi[0] = datumi[0].strip()
+        datumi[1] = datumi[1].strip()
+        durationBetweenDates = find_duration(datumi[0], datumi[1])
+        fourthOfJune = "04.06.2020"
+        dat1ToFourthOfJune = find_duration(datumi[0], fourthOfJune)
+        lista_gradova = ["dubrovnik","gospic","zadar","sibenik","osijek","pula","rijeka","split","varazdin","zagreb"]
+        lista_gradova.sort()
+        for grad in lista_gradova:
+            mapa[grad] = first_option(grad,durationBetweenDates,dat1ToFourthOfJune)
+    city = request.form["city"]
+    season = request.form["season"]
+    if city!="" and season!="":
+        mapa = second_option(city,season)
+        mapa = reformatiraj_mapu(mapa,season)
+       
+    return render_template(
         'probaindex.html',
-        mapa = mapa,
+         mapa = mapa,
     )
+def reformatiraj_mapu(mapa,season):
+    novamapa = {}
+    #novamapa = {"JANUARY":{},"FEBRUARY":{},"MARCH":{},"APRIL":{},"MAY":{},"JUNE":{},"JULY":{},"AUGUST":{},"SEPTEMBER":{},"OCTOBER":{},"NOVEMBER":{},"DECEMBER":{}}
+    if season == "spring":
+        s_list = ["MARCH","APRIL","MAY","JUNE"]
+    elif season == "summer":
+        s_list = ["JUNE","JULY","AUGUST","SEPTEMBER"]
+    elif season == "autumn":
+        s_list = ["SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"]
+    else:
+        s_list = ["DECEMBER","JANUARY","FEBRUARY","MARCH"]
+    counter = 1
+    sec_counter = 1
+
+    for key in mapa:
+        if key in s_list:
+            novamapa[key] = mapa[key]
+    return novamapa
+
+
 def first_option(dataset,days,difference1):
     openfile = "/Users/dorafranjic/desktop/datasets/{}.csv".format(dataset)        
     series = read_csv(openfile, header=None)
@@ -87,48 +114,48 @@ def first_option(dataset,days,difference1):
     return avg
 def second_option(dataset,season):
     openfile = "/Users/dorafranjic/Desktop/datasets/{}.csv".format(dataset)  
-    curr_year = str(int(today[:4]))
+    curr_year = str(today())[:4]
     ljeto = datetime.strptime("21.06.{}".format(curr_year),'%d.%m.%Y').date()
-    proljece = "21.03.{}".format(curr_year)
-    jesen = "23.09.{}".format(curr_year)
-    zima = "21.12.{}".format(curr_year)
+    proljece =  datetime.strptime("21.03.{}".format(curr_year),'%d.%m.%Y').date()
+    jesen = datetime.strptime("23.09.{}".format(curr_year),'%d.%m.%Y').date()
+    zima =  datetime.strptime("21.12.{}".format(curr_year),'%d.%m.%Y').date()
     curr_date = date.today()
-    if season == "ljeto":
+    if season == "summer":
         diff = (curr_date - ljeto).days
         if diff < 0:
             year = curr_year
         else:
-            year = curr_year+1
+            year = str(int(curr_year)+1)
         ljeto = datetime.strptime("21.06.{}".format(year),'%d.%m.%Y').date()
-        razlika = abs(datetime.strptime("04.06.{}".format(year),'%d.%m.%Y').date() - ljeto)
+        razlika = abs(datetime.strptime("04.06.{}".format(curr_year),'%d.%m.%Y').date() - ljeto).days
         days_of_season = 92
-    elif season == "jesen":
+    elif season == "autumn":
         diff = (curr_date - jesen).days
         if diff < 0:
             year = curr_year
         else:
-            year = curr_year+1
+            year = str(int(curr_year)+1)
         jesen = datetime.strptime("23.09.{}".format(year),'%d.%m.%Y').date()
-        razlika = abs(datetime.strptime("04.06.{}".format(year),'%d.%m.%Y').date() - jesen)
-        days_of_season = 91
-    elif season == "proljece":
+        razlika = abs(datetime.strptime("04.06.{}".format(curr_year),'%d.%m.%Y').date() - jesen).days
+        days_of_season = 87
+    elif season == "spring":
         diff = (curr_date - proljece).days
         if diff < 0:
             year = curr_year
         else:
-            year = curr_year+1
+            year = str(int(curr_year)+1)
         proljece = datetime.strptime("21.03.{}".format(year),'%d.%m.%Y').date()
-        razlika = abs(datetime.strptime("04.06.{}".format(year),'%d.%m.%Y').date() - proljece)
-        days_of_season = 92
+        razlika = abs(datetime.strptime("04.06.{}".format(curr_year),'%d.%m.%Y').date() - proljece).days
+        days_of_season = 90
     else:
         diff = (curr_date - zima).days
         if diff < 0:
             year = curr_year
         else:
-            year = curr_year+1
+            year = str(int(curr_year)+1)
         zima = datetime.strptime("21.12.{}".format(year),'%d.%m.%Y').date()
-        razlika = abs(datetime.strptime("04.06.{}".format(year),'%d.%m.%Y').date() - zima)
-        days_of_season = 90      
+        razlika = abs(datetime.strptime("04.06.{}".format(curr_year),'%d.%m.%Y').date() - zima).days
+        days_of_season = 88   
     series = read_csv(openfile, header=None)
     series.dropna(inplace=True)
     # seasonal difference
@@ -150,8 +177,8 @@ def second_option(dataset,season):
     mapa = {"JANUARY":{},"FEBRUARY":{},"MARCH":{},"APRIL":{},"MAY":{},"JUNE":{},"JULY":{},"AUGUST":{},"SEPTEMBER":{},"OCTOBER":{},"NOVEMBER":{},"DECEMBER":{}}
     for yhat in forecast:
         inverted = inverse_difference(history, yhat, days_in_year)
-        if counter > difference1-1:
-            datum = fourth_of_june + datetime.timedelta(days=day)
+        if counter > razlika-1:
+            datum = fourth_of_june + timedelta(days=day)
             key = pretvori(datum.month)
             mapa[key][str(datum)] = inverted
             #print('Day %d: %f' % (day, inverted))

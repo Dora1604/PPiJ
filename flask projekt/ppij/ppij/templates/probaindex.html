@@ -287,7 +287,7 @@
                     <div class="col-sm">
                         <div class="dropdownDest">
                             <div class="text__center">
-                                <select class="cs-select cs-skin-elastic">
+                                <select name="city" lass="cs-select cs-skin-elastic">
                                     <option value="" disabled selected>Choose a city</option>
                                     <option value="zagreb">ZAGREB</option>
                                     <option value="osijek">OSIJEK</option>
@@ -306,7 +306,7 @@
                     <div class="col-sm">
                         <div class="dropdownSeason">
                             <div class="text__center">
-                                <select class="cs-select cs-skin-elastic">
+                                <select name="season" class="cs-select cs-skin-elastic">
                                     <option value="" disabled selected>Choose a season</option>
                                     <option value="summer">SUMMER</option>
                                     <option value="autumn">AUTUMN</option>
@@ -324,21 +324,89 @@
             </div>
 
             <div id="opt2res" style="display:none;">
-                <button type="button" class="collapsible">MONTH 1</button>
+                <button type="button" class="collapsible">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 0 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
                 <div class="content">
-                    <p>Date: 7.7.2021. Temp: 32 Deegres Celsius</p>
-                    <p>Date: 7.7.2021. Temp: 32 Deegres Celsius</p>
-                    <p>Date: 7.7.2021. Temp: 32 Deegres Celsius</p>
-                    <p>Date: 7.7.2021. Temp: 32 Deegres Celsius</p>
-                    <p>Date: 7.7.2021. Temp: 32 Deegres Celsius</p>
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 0 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
                 </div>
-                <button type="button" class="collapsible" id="middlemonth">MONTH 2</button>
+                <button type="button" class="collapsible" id="middlemonth">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 1 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 1 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
                 </div>
-                <button type="button" class="collapsible">MONTH 3</button>
+                <button type="button" class="collapsible">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 2 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 2 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </div>
+                <button type="button" class="collapsible" id="middlemonth">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 3 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
+                <div class="content">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa.items() %}
+                        {% if count.value == 3 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
                 </div>
                 <div id="opt2export">
                     <div class="container buttons">
