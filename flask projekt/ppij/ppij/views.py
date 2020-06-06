@@ -5,14 +5,19 @@ Routes and views for the flask application.
 from datetime import datetime
 from datetime import date
 from datetime import timedelta
+from urllib import response
+
+from dateutil.utils import today
 from flask import render_template
 from ppij import app
-from flask import Flask, render_template, request, redirect, Response
-import random, json 
+from flask import Flask, render_template, request, redirect, Response, make_response
+import random, json
 from datetime import datetime
 from pandas import read_csv
 from statsmodels.tsa.arima_model import ARIMA
 import numpy
+import pdfkit
+import pdfkit
 
 @app.route('/')
 def home():
@@ -21,6 +26,15 @@ def home():
         'probaindex.html',
         mapa = mapa
     )
+@app.route('/<project>/<location>') #http://127.0.0.1:5555/PPiJ/Zagreb
+def pdf_template(project, location):
+    rendered = render_template('pdf_template.html', project=project, location=location)
+    pdf = pdfkit.from_string(rendered, False)
+    resp = make_response(pdf)
+    resp.headers['Content-Type'] = 'application/pdf'
+    resp.headers['Content-Disposition'] = 'attachment; filename=output.pdf'
+    return resp
+
 @app.route('/probaindex', methods=('GET', 'POST'))
 def probaindex():
      datum = request.form['datum']
