@@ -65,7 +65,7 @@
     </style>
 
     <div id="option1" style="display:none;">
-        <div id="opt1search"> 
+        <div id="opt1search">
             <input id="datepicker" placeholder="Choose date" name="datum" />
             <input type="submit">
             <style>
@@ -91,9 +91,9 @@
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'zagreb' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'zagreb' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -104,13 +104,13 @@
                             OSIJEK
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/osijek.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'osijek' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'osijek' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -121,13 +121,13 @@
                             PULA
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/pula.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'pula' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'pula' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -140,13 +140,13 @@
                             SPLIT
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/split.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'split' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'split' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -157,13 +157,13 @@
                             DUBROVNIK
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/dubrovnik.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'dubrovnik' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'dubrovnik' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -174,13 +174,13 @@
                             ZADAR
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/zadar.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'zadar' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'zadar' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -193,13 +193,13 @@
                             RIJEKA
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/rijeka.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'rijeka' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'rijeka' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -210,13 +210,13 @@
                             ŠIBENIK
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/sibenik.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'sibenik' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'sibenik' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -227,37 +227,38 @@
                             VARAŽDIN
                         </div>
                         <div class="destinationimage">
-                            <img class="imgresult" src="../static/images/zgb.jpg">
+                            <img class="imgresult" src="../static/images/varazdin.jpg">
                         </div>
                         <div class="destinationname">
                             {% for key, value in mapa.items() %}
-                                {% if key == 'varazdin' %}
-                                    <dd>temperatura: {{ value|e }}</dd>
-                                {% endif %}
+                            {% if key == 'varazdin' %}
+                            <dd>temperatura: {{ value|e }}</dd>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-        <div id="opt1export">
-            <div class="container buttons">
-                <div class="row">
-                    <div class="col-sm">
-                        ''
-                    </div>
-                    <div class="col-sm" id="pdf">
-                        <a class="button pdf">Export to PDF</a>
-                    </div>
-                    <div class="col-sm" id="right_button">
-                        <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+        <div>
+            <div id="opt1export">
+                <div class="container buttons">
+                    <div class="row">
+                        <div class="col-sm">
+                            ''
+                        </div>
+                        <div class="col-sm" id="pdf">
+                            <a class="button pdf">Export to PDF</a>
+                        </div>
+                        <div class="col-sm" id="right_button">
+                            <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div id="option2" style="display:none;">
         <div id="opt2search">
             <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">

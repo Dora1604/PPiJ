@@ -34,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ppij\" />
+    <Folder Include="ppij\dataset\" />
     <Folder Include="ppij\static\" />
     <Folder Include="ppij\static\content\" />
     <Folder Include="ppij\static\fonts\" />
@@ -44,15 +45,46 @@
     <Folder Include="ppij\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ppij\dataset\.DS_Store" />
+    <Content Include="ppij\dataset\dubrovnik.csv" />
+    <Content Include="ppij\dataset\dubrovnik.jpg" />
+    <Content Include="ppij\dataset\gospic.csv" />
+    <Content Include="ppij\dataset\gospic.jpg" />
+    <Content Include="ppij\dataset\osijek.csv" />
+    <Content Include="ppij\dataset\osijek.jpg" />
+    <Content Include="ppij\dataset\pula.csv" />
+    <Content Include="ppij\dataset\pula.jpg" />
+    <Content Include="ppij\dataset\rijeka.csv" />
+    <Content Include="ppij\dataset\rijeka.jpg" />
+    <Content Include="ppij\dataset\sibenik.csv" />
+    <Content Include="ppij\dataset\sibenik.jpg" />
+    <Content Include="ppij\dataset\split.csv" />
+    <Content Include="ppij\dataset\split.jpg" />
+    <Content Include="ppij\dataset\varazdin.csv" />
+    <Content Include="ppij\dataset\varazdin.jpg" />
+    <Content Include="ppij\dataset\zadar.csv" />
+    <Content Include="ppij\dataset\zadar.jpg" />
+    <Content Include="ppij\dataset\zagreb.csv" />
     <Content Include="ppij\static\content\proba.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="ppij\static\images\.DS_Store" />
+    <Content Include="ppij\static\images\dubrovnik.jpg" />
     <Content Include="ppij\static\images\gleen.jpeg" />
+    <Content Include="ppij\static\images\gleen.png" />
     <Content Include="ppij\static\images\gleen21.jpeg" />
     <Content Include="ppij\static\images\gleen221.jpeg" />
+    <Content Include="ppij\static\images\gospic.jpg" />
+    <Content Include="ppij\static\images\osijek.jpg" />
     <Content Include="ppij\static\images\proba.jpeg" />
+    <Content Include="ppij\static\images\pula.jpg" />
+    <Content Include="ppij\static\images\rijeka.jpg" />
     <Content Include="ppij\static\images\rovinj.jpg" />
     <Content Include="ppij\static\images\rsz_gleen.jpg" />
+    <Content Include="ppij\static\images\sibenik.jpg" />
+    <Content Include="ppij\static\images\split.jpg" />
+    <Content Include="ppij\static\images\varazdin.jpg" />
+    <Content Include="ppij\static\images\zadar.jpg" />
     <Content Include="ppij\static\images\zagreb.jpg" />
     <Content Include="ppij\static\images\zgb.jpg" />
     <Content Include="ppij\static\scripts\css\demo.css" />

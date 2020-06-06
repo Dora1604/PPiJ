@@ -17,7 +17,6 @@ from pandas import read_csv
 from statsmodels.tsa.arima_model import ARIMA
 import numpy
 import pdfkit
-import pdfkit
 
 @app.route('/')
 def home():
@@ -54,7 +53,7 @@ def probaindex():
         mapa = mapa,
     )
 def first_option(dataset,days,difference1):
-    openfile = "/Users/dorafranjic/Desktop/datasets/{}.csv".format(dataset)        
+    openfile = "/dataset/{}.csv".format(dataset)        
     series = read_csv(openfile, header=None)
     series.dropna(inplace=True)
     # seasonal difference
