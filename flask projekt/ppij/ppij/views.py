@@ -53,7 +53,7 @@ def probaindex():
         mapa = mapa,
     )
 def first_option(dataset,days,difference1):
-    openfile = "/dataset/{}.csv".format(dataset)        
+    openfile = "/Users/dorafranjic/desktop/datasets/{}.csv".format(dataset)        
     series = read_csv(openfile, header=None)
     series.dropna(inplace=True)
     # seasonal difference
@@ -66,6 +66,7 @@ def first_option(dataset,days,difference1):
     # multi-step out-of-sample forecast
     start_index = len(differenced)
     end_index = start_index + days + difference1
+    start_index = start_index 
     forecast = model_fit.predict(start=start_index, end=end_index)
     # invert the differenced forecast to something usable
     history = [x for x in X]
@@ -73,14 +74,15 @@ def first_option(dataset,days,difference1):
     sum = 0
     num_of_days = 0
     mapa = {}
+    counter = 1
     for yhat in forecast:
-        if day >= difference1:
-            inverted = inverse_difference(history, yhat, days_in_year)
+        inverted = inverse_difference(history, yhat, days_in_year)
+        if counter > difference1-1:
             sum += inverted
             num_of_days += 1
-            #print('Day %d: %f' % (day, inverted))
-            history.append(inverted)
+        history.append(inverted)
         day += 1
+        counter +=1
     avg = sum/num_of_days
     return avg
 def second_option(dataset,season):
@@ -144,15 +146,17 @@ def second_option(dataset,season):
     history = [x for x in X]
     fourth_of_june = datetime.strptime("04.06.{}".format(year),'%d.%m.%Y').date()
     day = 1
+    counter = 1
     mapa = {"JANUARY":{},"FEBRUARY":{},"MARCH":{},"APRIL":{},"MAY":{},"JUNE":{},"JULY":{},"AUGUST":{},"SEPTEMBER":{},"OCTOBER":{},"NOVEMBER":{},"DECEMBER":{}}
     for yhat in forecast:
-        if day >= razlika:
-            inverted = inverse_difference(history, yhat, days_in_year)
+        inverted = inverse_difference(history, yhat, days_in_year)
+        if counter > difference1-1:
             datum = fourth_of_june + datetime.timedelta(days=day)
             key = pretvori(datum.month)
             mapa[key][str(datum)] = inverted
             #print('Day %d: %f' % (day, inverted))
-            history.append(inverted)
+        history.append(inverted)
+        counter+=1
         day += 1
     return mapa
 def pretvori(mjesec):
@@ -192,12 +196,6 @@ def difference(dataset, interval=1):
 # invert differenced value
 def inverse_difference(history, yhat, interval=1):
 	return float(yhat) + float(history[-interval])
-
-
-
-
-
-
 
 def find_duration(dat1, dat2):
     date1 = datetime.strptime(dat1, '%d.%m.%Y').date()
