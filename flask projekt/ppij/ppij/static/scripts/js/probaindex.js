@@ -25,6 +25,12 @@ function showresultsOPtion1() {
     element.scrollIntoView({ behavior: 'smooth' });
 }
 
+function showresultsOPtion2() {
+    document.getElementById('opt2res').style.display = "block";
+    var element = document.querySelector("#opt2res");
+    element.scrollIntoView({ behavior: 'smooth' });
+}
+
 
 function showOption2() {
     document.getElementById('option2').style.display = "block";
