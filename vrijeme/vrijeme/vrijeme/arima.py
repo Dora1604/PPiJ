@@ -27,7 +27,7 @@ model = ARIMA(differenced, order=(7,0,1))
 model_fit = model.fit(disp=0)
 # multi-step out-of-sample forecast
 start_index = len(differenced)
-end_index = start_index + 50
+end_index = start_index + 215
 forecast = model_fit.predict(start=start_index, end=end_index)
 # invert the differenced forecast to something usable
 history = [x for x in X]
