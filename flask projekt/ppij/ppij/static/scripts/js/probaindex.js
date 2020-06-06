@@ -19,6 +19,12 @@ function newDest() {
     element.scrollIntoView({ behavior: 'smooth' });
 }
 
+function showresultsOPtion1() {
+    document.getElementById('opt1results').style.display = "block";
+    var element = document.querySelector("#opt1results");
+    element.scrollIntoView({ behavior: 'smooth' });
+}
+
 
 function showOption2() {
     document.getElementById('option2').style.display = "block";

@@ -67,7 +67,7 @@
     <div id="option1" style="display:none;">
         <div id="opt1search">
             <input id="datepicker" placeholder="Choose date" name="datum" />
-            <input type="submit">
+
             <style>
                 :root {
                     --litepickerDayIsStartBg: #F46710 !important;
@@ -77,13 +77,26 @@
                     --litepickerDayIsEndBg: #F46710 !important;
                 }
             </style>
+
         </div>
 
-        <div id="opt1results">
+        <input type="submit" style="margin-top:5%" class="button pdf" onclick="showresultsOPtion1()">
+        <input type="button" onclick="showresultsOPtion1()"/>
+
+        <style>
+            input[type="submit" i] {
+                background-color: #042447;
+                color: antiquewhite;
+                border-color: #042447;
+            }
+        </style>
+
+
+        <div id="opt1results"  style="display:none;">
             <div class="row" style="margin-bottom: 100px">
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight: bold">
                             ZAGREB
                         </div>
                         <div class="destinationimage">
@@ -100,7 +113,7 @@
                 </div>
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight: bold">
                             OSIJEK
                         </div>
                         <div class="destinationimage">
@@ -117,7 +130,7 @@
                 </div>
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight: bold">
                             PULA
                         </div>
                         <div class="destinationimage">
@@ -133,10 +146,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-bottom: 100px">
+            <div class="row" style="margin-bottom: 100px" style="font-weight: bold">
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" >
                             SPLIT
                         </div>
                         <div class="destinationimage">
@@ -153,7 +166,7 @@
                 </div>
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight: bold">
                             DUBROVNIK
                         </div>
                         <div class="destinationimage">
@@ -170,7 +183,7 @@
                 </div>
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight: bold">
                             ZADAR
                         </div>
                         <div class="destinationimage">
@@ -189,7 +202,7 @@
             <div class="row" style="margin-bottom: 100px">
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight: bold">
                             RIJEKA
                         </div>
                         <div class="destinationimage">
@@ -206,7 +219,7 @@
                 </div>
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight:bold">
                             ŠIBENIK
                         </div>
                         <div class="destinationimage">
@@ -223,7 +236,7 @@
                 </div>
                 <div class="col-sm result">
                     <div class="resultinner">
-                        <div class="destinationname">
+                        <div class="destinationname" style="font-weight: bold">
                             VARAŽDIN
                         </div>
                         <div class="destinationimage">
