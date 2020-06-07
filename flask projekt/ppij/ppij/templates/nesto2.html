@@ -1,1 +1,230 @@
-<div>nesto2</div>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/scripts/css/probaindex.css" />
+    <script type="text/javascript" src="../static/scripts/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/css/style.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<html>
+<body>
+
+    <form action="{{ url_for('nesto2') }}" method="post">
+
+
+        
+        <div id="option2A" style="margin-top:5%; ">
+            <div id="opt2search" style="margin-bottom:5%;">
+                <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+                    <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+                    </div>
+                    <div class="col-sm">
+                        <div class="dropdownDest">
+                            <div class="text__center">
+                                <select name="city" lass="cs-select cs-skin-elastic">
+                                    <option value="" selected="selected">Choose a city</option>
+                                    <option value="zagreb">ZAGREB</option>
+                                    <option value="osijek">OSIJEK</option>
+                                    <option value="pula">PULA</option>
+                                    <option value="split">SPLIT</option>
+                                    <option value="dubrovnik">DUBROVNIK</option>
+                                    <option value="zadar">ZADAR</option>
+                                    <option value="rijeka">RIJEKA</option>
+                                    <option value="varazdin">VARAŽDIN</option>
+                                    <option value="sibenik">ŠIBENIK</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="dropdownSeason">
+                            <div class="text__center">
+                                <select name="season" class="cs-select cs-skin-elastic">
+                                    <option value="" selected="selected">Choose a season</option>
+                                    <option value="summer">SUMMER</option>
+                                    <option value="autumn">AUTUMN</option>
+                                    <option value="winter">WINTER</option>
+                                    <option value="spring">SPRING</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+                    </div>
+                </div>
+                <input type="submit" style="margin-top:5%" class="button pdf" onclick="showresultsOPtion2()">
+                <input type="button" onclick="showresultsOPtion2()" />
+            </div>
+
+            <div id="opt2resA">
+                <button type="button" class="collapsible">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 0 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
+                <div class="content">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 0 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </div>
+                <button type="button" class="collapsible" id="middlemonth">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 1 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
+                <div class="content">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 1 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </div>
+                <button type="button" class="collapsible">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 2 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
+                <div class="content">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 2 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </div>
+                <button type="button" class="collapsible" id="middlemonth">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 3 %}
+                            <dd>{{ key|e }}</dd>
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </button>
+                <div class="content">
+                    {% set count = namespace(value = 0) %}
+                    {% for key, value in mapa2.items() %}
+                        {% if count.value == 3 %}
+                            {% for key1, value1 in value.items() %}
+                                <dd>{{ key1|e }}</dd>
+                                <dd>{{ value1|e }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                        {% set count.value = count.value + 1 %}
+                    {% endfor %}
+                </div>
+            </div>
+                <div id="opt2export">
+                    <div class="container buttons">
+                        <div class="row">
+                            <div class="col-sm">
+                                ''
+                            </div>
+                            <div class="col-sm" id="pdf">
+                                <a class="button pdf">Export to PDF</a>
+                            </div>
+                            <div class="col-sm" id="right_button">
+                                <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+
+            <style>
+                .collapsible {
+                    background-color: #FEED67;
+                    padding: 2px 2px 2px 2px;
+                    font-family: 'Baloo Chettan 2', cursive;
+                    cursor: pointer;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                }
+
+                #middlemonth {
+                    background-color: #ffffe0;
+                    padding: 2px 2px 2px 2px;
+                    font-family: 'Baloo Chettan 2', cursive;
+                    cursor: pointer;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                }
+
+                .active, .collapsible:hover {
+                    background-color: #FEED67;
+                    border: none;
+                }
+
+                .content {
+                    padding: 0 18px;
+                    display: none;
+                    overflow: hidden;
+                    background-color: white;
+                }
+            </style>
+
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                            content.style.display = "none";
+                        } else {
+                            content.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+
+            
+        </div>
+    </form>
+
+    <script src="../static/scripts/js/probaindex.js"></script>
+    <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+    <script src='https://rawgit.com/tempusdominus/bootstrap-4/master/build/js/tempusdominus-bootstrap-4.min.js'></script>
+
+</body>
+</html>

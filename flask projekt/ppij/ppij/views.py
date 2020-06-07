@@ -23,7 +23,7 @@ def home():
      mapa = {}
      mapa2 = {}
      return render_template(
-        'probaindex.html',
+        'tony.html',
         mapa = mapa,
         mapa2 = mapa2
     )
@@ -33,17 +33,57 @@ def tony():
     return render_template(
         'tony.html'
     )
-
-@app.route('/nesto1')
-def nesto1():
+@app.route('/nesto1',methods=["GET"])
+def nesto22():
+    mapa = {}
+    mapa2 = {}
     return render_template(
-        'nesto1.html'
+        'nesto1.html',
+        mapa = mapa,
+        mapa2 = mapa2
     )
 
-@app.route('/nesto2')
-def nesto2():
+@app.route('/nesto1' ,methods=['POST'])
+def nesto1():
+    mapa = {}
+    mapa2 = {}
+    datum = request.form['datum']
+    datumi = datum.split('-')
+    datumi[0] = datumi[0].strip()
+    datumi[1] = datumi[1].strip()
+    durationBetweenDates = find_duration(datumi[0], datumi[1])
+    fourthOfJune = "04.06.2020"
+    dat1ToFourthOfJune = find_duration(datumi[0], fourthOfJune)
+    lista_gradova = ["dubrovnik","gospic","zadar","sibenik","osijek","pula","rijeka","split","varazdin","zagreb"]
+    lista_gradova.sort()
+    for grad in lista_gradova:
+        mapa[grad] = first_option(grad,durationBetweenDates,dat1ToFourthOfJune)   
     return render_template(
-        'nesto2.html'
+        'nesto1.html',
+        mapa = mapa,
+        mapa2 = mapa2
+    )
+@app.route('/nesto2',methods=['GET'])
+def nesto222():
+    mapa = {}
+    mapa2 = {}
+    return render_template(
+        'nesto2.html',
+        mapa = mapa,
+        mapa2 = mapa2
+    )
+@app.route('/nesto2',methods=['POST'])
+def nesto2():
+    mapa2 = {}
+    mapa = {}
+    city = request.form['city']
+    season = request.form['season']
+    mapa2 = second_option(city,season)
+    mapa2 = reformatiraj_mapu(mapa2,season)
+    return render_template(
+        'nesto2.html',
+        mapa = mapa,
+        mapa2 = mapa2
     )
 
 @app.route('/<project>/<location>') #http://127.0.0.1:5555/PPiJ/Zagreb

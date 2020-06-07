@@ -1,9 +1,4 @@
-function showOption1() {
-    document.getElementById('option1').style.display = "block";
-    document.getElementById('option2').style.display = "none";
-    var element = document.querySelector("#option1");
-    element.scrollIntoView({ behavior: 'smooth' });
-}
+
 function options() {
     var element = document.querySelector("#optionsp");
     element.scrollIntoView({ behavior: 'smooth' });
@@ -19,25 +14,12 @@ function newDest() {
     element.scrollIntoView({ behavior: 'smooth' });
 }
 
-function showresultsOPtion1() {
-    document.getElementById('opt1results').style.display = "block";
-    var element = document.querySelector("#opt1results");
-    element.scrollIntoView({ behavior: 'smooth' });
-}
-
-function showresultsOPtion2() {
-    document.getElementById('opt2res').style.display = "block";
-    var element = document.querySelector("#opt2res");
-    element.scrollIntoView({ behavior: 'smooth' });
-}
 
 
-function showOption2() {
-    document.getElementById('option2').style.display = "block";
-    document.getElementById('option1').style.display = "none";
-    var element = document.querySelector("#option2");
-    element.scrollIntoView({ behavior: 'smooth' });
-}
+
+
+
+
 
 
 function month1() {
