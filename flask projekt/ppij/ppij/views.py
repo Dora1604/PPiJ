@@ -27,6 +27,25 @@ def home():
         mapa = mapa,
         mapa2 = mapa2
     )
+
+@app.route('/tony')
+def tony():
+    return render_template(
+        'tony.html'
+    )
+
+@app.route('/nesto1')
+def nesto1():
+    return render_template(
+        'nesto1.html'
+    )
+
+@app.route('/nesto2')
+def nesto2():
+    return render_template(
+        'nesto2.html'
+    )
+
 @app.route('/<project>/<location>') #http://127.0.0.1:5555/PPiJ/Zagreb
 def pdf_template(project, location):
     rendered = render_template('pdf_template.html', project=project, location=location)
