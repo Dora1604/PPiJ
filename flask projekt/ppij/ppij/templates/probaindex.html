@@ -288,15 +288,14 @@
                         <div class="dropdownDest">
                             <div class="text__center">
                                 <select name="city" lass="cs-select cs-skin-elastic">
-                                    <option value="" disabled selected>Choose a city</option>
+                                    <option value="" selected="selected">Choose a city</option>
                                     <option value="zagreb">ZAGREB</option>
                                     <option value="osijek">OSIJEK</option>
                                     <option value="pula">PULA</option>
                                     <option value="split">SPLIT</option>
                                     <option value="dubrovnik">DUBROVNIK</option>
                                     <option value="zadar">ZADAR</option>
-                                    <option value="rijeka">RIJEKA
-                                    <option>
+                                    <option value="rijeka">RIJEKA</option>
                                     <option value="varazdin">VARAŽDIN</option>
                                     <option value="sibenik">ŠIBENIK</option>
                                 </select>
@@ -307,7 +306,7 @@
                         <div class="dropdownSeason">
                             <div class="text__center">
                                 <select name="season" class="cs-select cs-skin-elastic">
-                                    <option value="" disabled selected>Choose a season</option>
+                                    <option value="" selected="selected">Choose a season</option>
                                     <option value="summer">SUMMER</option>
                                     <option value="autumn">AUTUMN</option>
                                     <option value="winter">WINTER</option>
@@ -323,10 +322,10 @@
                 <input type="button" onclick="showresultsOPtion2()" />
             </div>
 
-            <div id="opt2res" style="display:none;">
+            <div id="opt2res" style="display: none">
                 <button type="button" class="collapsible">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 0 %}
                             <dd>{{ key|e }}</dd>
                         {% endif %}
@@ -335,7 +334,7 @@
                 </button>
                 <div class="content">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 0 %}
                             {% for key1, value1 in value.items() %}
                                 <dd>{{ key1|e }}</dd>
@@ -347,7 +346,7 @@
                 </div>
                 <button type="button" class="collapsible" id="middlemonth">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 1 %}
                             <dd>{{ key|e }}</dd>
                         {% endif %}
@@ -356,7 +355,7 @@
                 </button>
                 <div class="content">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 1 %}
                             {% for key1, value1 in value.items() %}
                                 <dd>{{ key1|e }}</dd>
@@ -368,7 +367,7 @@
                 </div>
                 <button type="button" class="collapsible">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 2 %}
                             <dd>{{ key|e }}</dd>
                         {% endif %}
@@ -377,7 +376,7 @@
                 </button>
                 <div class="content">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 2 %}
                             {% for key1, value1 in value.items() %}
                                 <dd>{{ key1|e }}</dd>
@@ -389,7 +388,7 @@
                 </div>
                 <button type="button" class="collapsible" id="middlemonth">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 3 %}
                             <dd>{{ key|e }}</dd>
                         {% endif %}
@@ -398,7 +397,7 @@
                 </button>
                 <div class="content">
                     {% set count = namespace(value = 0) %}
-                    {% for key, value in mapa.items() %}
+                    {% for key, value in mapa2.items() %}
                         {% if count.value == 3 %}
                             {% for key1, value1 in value.items() %}
                                 <dd>{{ key1|e }}</dd>
@@ -408,6 +407,7 @@
                         {% set count.value = count.value + 1 %}
                     {% endfor %}
                 </div>
+            </div>
                 <div id="opt2export">
                     <div class="container buttons">
                         <div class="row">
@@ -423,7 +423,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+           
 
             <style>
                 .collapsible {

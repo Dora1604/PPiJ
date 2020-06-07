@@ -21,9 +21,11 @@ import pdfkit
 @app.route('/')
 def home():
      mapa = {}
+     mapa2 = {}
      return render_template(
         'probaindex.html',
-        mapa = mapa
+        mapa = mapa,
+        mapa2 = mapa2
     )
 @app.route('/<project>/<location>') #http://127.0.0.1:5555/PPiJ/Zagreb
 def pdf_template(project, location):
@@ -37,8 +39,11 @@ def pdf_template(project, location):
 @app.route('/probaindex', methods=('GET', 'POST'))
 def probaindex():
     mapa = {}
+    mapa2 = {}
     datum = request.form['datum']
-    if datum != "":
+    city = request.form["city"]
+    season = request.form["season"]
+    if datum != "" and city=="" and season=="":
         datumi = datum.split('-')
         datumi[0] = datumi[0].strip()
         datumi[1] = datumi[1].strip()
@@ -49,15 +54,14 @@ def probaindex():
         lista_gradova.sort()
         for grad in lista_gradova:
             mapa[grad] = first_option(grad,durationBetweenDates,dat1ToFourthOfJune)
-    city = request.form["city"]
-    season = request.form["season"]
-    if city!="" and season!="":
-        mapa = second_option(city,season)
-        mapa = reformatiraj_mapu(mapa,season)
+    if city!="" and season!="" and datum=="":
+        mapa2 = second_option(city,season)
+        mapa2 = reformatiraj_mapu(mapa2,season)
        
     return render_template(
         'probaindex.html',
          mapa = mapa,
+         mapa2 = mapa2
     )
 def reformatiraj_mapu(mapa,season):
     novamapa = {}
