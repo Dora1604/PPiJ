@@ -11,6 +11,9 @@
 <html>
 <body>
 
+
+   
+
     <form action="{{ url_for('nesto1') }}" method="post">
 
         
@@ -226,12 +229,15 @@
                                 <div class="col-sm" id="pdf">
                                     <a class="button pdf">Export to PDF</a>
                                 </div>
-                                <div class="col-sm" id="right_button">
-                                    <a class="button chooseagain" onclick="options()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+                                <div class="col-sm">
+                                    <a  onclick="newDate()" id="right_button" class="button chooseagain"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <script>
+                        
+                    </script>
                 </div>
             </div>
 
@@ -293,8 +299,7 @@
                 }
             </script>
 
-            
-        </div>
+       
     </form>
 
     <script src="../static/scripts/js/probaindex.js"></script>
