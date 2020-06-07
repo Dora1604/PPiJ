@@ -143,7 +143,7 @@ def reformatiraj_mapu(mapa,season):
 
 
 def first_option(dataset,days,difference1):
-    openfile = "/Users/dorafranjic/desktop/datasets/{}.csv".format(dataset)        
+    openfile = "/Users/ancip/Desktop/dataset/{}.csv".format(dataset)        
     series = read_csv(openfile, header=None)
     series.dropna(inplace=True)
     # seasonal difference
@@ -176,7 +176,7 @@ def first_option(dataset,days,difference1):
     avg = sum/num_of_days
     return avg
 def second_option(dataset,season):
-    openfile = "/Users/dorafranjic/Desktop/datasets/{}.csv".format(dataset)  
+    openfile = "/Users/ancip/Desktop/dataset/{}.csv".format(dataset)  
     curr_year = str(today())[:4]
     ljeto = datetime.strptime("21.06.{}".format(curr_year),'%d.%m.%Y').date()
     proljece =  datetime.strptime("21.03.{}".format(curr_year),'%d.%m.%Y').date()

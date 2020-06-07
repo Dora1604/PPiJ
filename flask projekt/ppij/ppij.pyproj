@@ -99,9 +99,16 @@
     <Content Include="ppij\static\scripts\proba.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="ppij\templates\nesto1.html" />
+    <Content Include="ppij\templates\nesto2.html" />
+    <Content Include="ppij\templates\option1.html" />
+    <Content Include="ppij\templates\option2.html" />
+    <Content Include="ppij\templates\pdf_template.html" />
     <Content Include="ppij\templates\probaindex.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="ppij\templates\snow.html" />
+    <Content Include="ppij\templates\tony.html" />
     <Content Include="requirements.txt" />
     <Content Include="ppij\static\content\bootstrap.css" />
     <Content Include="ppij\static\content\bootstrap.min.css" />

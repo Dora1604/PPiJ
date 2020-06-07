@@ -36,41 +36,29 @@
         
 
 
-        <div class="container" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-            <div id="hover_div" onmouseover="changeOpacity('.3')" onmouseout="changeOpacity('1.0')">
-            <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-                <a href="{{ url_for('nesto1') }}">
-                <div class="col-sm-6 " onclick="showOption1()" role="button" id="lijevinovi" onmouseover="changeOpacity1('.3')" onmouseout="changeOpacity1('1.0')">
-                    <p><span style="color:#F46710">You know the</span></p>
-                    <p><span style="color:#F46710">date</span> but want to</p>
-                    <p>choose the right destination...</p>
-                </div>
-                </a>
-                <a href="{{ url_for('nesto2') }}">
-                <div class="col-sm-6 " onclick="showOption2()" role="button" id="desninovi"  onmouseover="changeOpacity2('.3')" onmouseout="changeOpacity2('1.0')">
-                    <p>... or <span style="color:#F46710">you know</span></p>
-                    <p><span style="color:#F46710">where you want to go</span></p>
-                    <p>but you are not sure when.</p>
-                </div>
-                 </a>
+        <div class="container222" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+            <div style="color: #FFFFFF; text-decoration: none;">
+                    <a href="{{ url_for('nesto1') }}" style="text-decoration:none; color: black">
+                    <div onmouseover="changeOpacity1('.3')" onmouseout="changeOpacity1('1.0')" id="tonyopcija1">
+                        <p><span style="color:#F46710">You know the</span></p>
+                        <p><span style="color:#F46710">date</span> but want to</p>
+                        <p style="margin-bottom:0;">choose the right destination...</p>
+                    </div>
+                    </a>
+                    <a href="{{ url_for('nesto2') }}" style="text-decoration:none; color: black">
+                    <div  onmouseover="changeOpacity2('.3')" onmouseout="changeOpacity2('1.0')" id="tonyopcija2">
+                        <p>... or <span style="color:#F46710">you know</span></p>
+                        <p><span style="color:#F46710">where you want to go</span></p>
+                        <p style="margin-bottom:0;">but you are not sure when.</p>
+                    </div>
+                     </a>
+              
             </div>
         </div>
 
-        <style>
-            @media (min-width: 768px) {
-                .container {
-                    max-width: 100%;
-                }
-            }
+       
 
-            @media (min-width: 576px) {
-                .container {
-                    max-width: 100%;
-                }
-            }
-        </style>
 
-    </form>
 
     <script src="../static/scripts/js/probaindex.js"></script>
     <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
