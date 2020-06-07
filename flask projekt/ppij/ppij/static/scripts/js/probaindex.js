@@ -10,7 +10,7 @@ function newDate() {
 }
 
 function newDest() {
-    var element = document.querySelector("#option2");
+    var element = document.querySelector("#opt2search");
     element.scrollIntoView({ behavior: 'smooth' });
 }
 
