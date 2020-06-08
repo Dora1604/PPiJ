@@ -5,6 +5,8 @@ Routes and views for the flask application.
 from datetime import datetime
 from datetime import date
 from datetime import timedelta
+from subprocess import check_output
+from tempfile import NamedTemporaryFile
 from urllib import response
 
 from dateutil.utils import today
@@ -17,6 +19,9 @@ from pandas import read_csv
 from statsmodels.tsa.arima_model import ARIMA
 import numpy
 import pdfkit
+import flaskpdf
+
+
 
 @app.route('/')
 def home():
@@ -95,6 +100,45 @@ def pdf_template(project, location):
     resp.headers['Content-Disposition'] = 'attachment; filename=output.pdf'
     return resp
 
+@app.route('/<key>/<key1>/<value1>') #http://127.0.0.1:5555/1/2/3
+def pdf_template2(key, key1, value1):
+    rendered = render_template('nesto2.html', key=key, key1=key1, value1=value1)
+    pdf = pdfkit.from_string(rendered, False)
+    resp = make_response(pdf)
+    resp.headers['Content-Type'] = 'application/pdf'
+    resp.headers['Content-Disposition'] = 'attachment; filename=output2.pdf'
+    return resp
+
+@app.route('/<value>') #http://127.0.0.1:5555/1
+def pdf_template1(value):
+    rendered = render_template('nesto1.html', value=value)
+    pdf = pdfkit.from_string(rendered, False)
+    resp = make_response(pdf)
+    resp.headers['Content-Type'] = 'application/pdf'
+    resp.headers['Content-Disposition'] = 'attachment; filename=output1.pdf'
+    return resp
+
+
+app = Flask(__name__)
+flaskpdf.init_app(app)
+
+def init_app(app):
+    @app.route(app.config.get('PDF_URL_RULE', '/<path:path>.pdf'),
+               methods=['get'])
+    def download_pdf(path):
+        tmp_file = NamedTemporaryFile()
+        command = app.config.get('PDF_WKHTMLTOPDF_COMMAND', 'wkhtmltopdf '
+                                 '--print-media-type {url} {output}')
+        check_output(command.format(url='{}{}'.format(request.url_root, path),
+                                    output=tmp_file.name),
+                     shell=True)
+        resp = Response(tmp_file.file.readlines())
+        resp.mimetype = 'application/pdf'
+        resp.headers['Content-Disposition'] = (
+            'attachment; filename={}.pdf'.format(path.replace('/', '_')))
+        tmp_file.close()
+        return resp
+
 @app.route('/probaindex', methods=('GET', 'POST'))
 def probaindex():
     mapa = {}
@@ -143,7 +187,7 @@ def reformatiraj_mapu(mapa,season):
 
 
 def first_option(dataset,days,difference1):
-    openfile = "/Users/ancip/Desktop/dataset/{}.csv".format(dataset)        
+    openfile = "/Users/enafi/OneDrive/Desktop/dataset/{}.csv".format(dataset)
     series = read_csv(openfile, header=None)
     series.dropna(inplace=True)
     # seasonal difference
@@ -176,7 +220,7 @@ def first_option(dataset,days,difference1):
     avg = sum/num_of_days
     return avg
 def second_option(dataset,season):
-    openfile = "/Users/ancip/Desktop/dataset/{}.csv".format(dataset)  
+    openfile = "/Users/enafi/OneDrive/Desktop/dataset/{}.csv".format(dataset)
     curr_year = str(today())[:4]
     ljeto = datetime.strptime("21.06.{}".format(curr_year),'%d.%m.%Y').date()
     proljece =  datetime.strptime("21.03.{}".format(curr_year),'%d.%m.%Y').date()
