@@ -11,12 +11,28 @@
 <html>
 <body>
 
+    <style>
+        img.sticky {
+            position: sticky;
+            position: sticky;
+            top: 0;
+            width: 170px;
+            margin-left: 80%;
+            border-radius: 50%;
+            margin-top: 5%;
+            border: 7px solid #FEED67;
+            z-index: 1;
+        }
+    </style>
 
-   
+
+
+    <img class="sticky" src="../static/images/gleen.png" alt="Avatar">
+
 
     <form action="{{ url_for('nesto1') }}" method="post">
 
-        
+
 
         <style>
             @media (min-width: 768px) {
@@ -69,7 +85,7 @@
                             <div class="destinationimage">
                                 <img class="imgresult" src="../static/images/zgb.jpg">
                             </div>
-                            <div class="destinationname" >
+                            <div class="destinationname">
                                 {% for key, value in mapa.items() %}
                                 {% if key == 'zagreb' %}
                                 <dd>temperatura: {{ value|e }}</dd>
@@ -230,76 +246,76 @@
                                     <a class="button pdf">Export to PDF</a>
                                 </div>
                                 <div class="col-sm">
-                                    <a  onclick="newDate()" id="right_button" class="button chooseagain"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+                                    <a onclick="newDate()" id="right_button" class="button chooseagain"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <script>
-                        
+
                     </script>
                 </div>
             </div>
 
         </div>
 
-        
 
-            <!--<style>
-                .collapsible {
-                    background-color: #FEED67;
-                    padding: 2px 2px 2px 2px;
-                    font-family: 'Baloo Chettan 2', cursive;
-                    cursor: pointer;
-                    width: 100%;
-                    border: none;
-                    text-align: left;
-                    outline: none;
-                    font-size: 15px;
-                }
 
-                #middlemonth {
-                    background-color: #ffffe0;
-                    padding: 2px 2px 2px 2px;
-                    font-family: 'Baloo Chettan 2', cursive;
-                    cursor: pointer;
-                    width: 100%;
-                    border: none;
-                    text-align: left;
-                    outline: none;
-                    font-size: 15px;
-                }
+        <!--<style>
+            .collapsible {
+                background-color: #FEED67;
+                padding: 2px 2px 2px 2px;
+                font-family: 'Baloo Chettan 2', cursive;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
 
-                .active, .collapsible:hover {
-                    background-color: #FEED67;
-                    border: none;
-                }
+            #middlemonth {
+                background-color: #ffffe0;
+                padding: 2px 2px 2px 2px;
+                font-family: 'Baloo Chettan 2', cursive;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
 
-                .content {
-                    padding: 0 18px;
-                    display: none;
-                    overflow: hidden;
-                    background-color: white;
-                }
-            </style>
+            .active, .collapsible:hover {
+                background-color: #FEED67;
+                border: none;
+            }
 
-            <script>
-                var coll = document.getElementsByClassName("collapsible");
-                var i;
-                for (i = 0; i < coll.length; i++) {
-                    coll[i].addEventListener("click", function () {
-                        this.classList.toggle("active");
-                        var content = this.nextElementSibling;
-                        if (content.style.display === "block") {
-                            content.style.display = "none";
-                        } else {
-                            content.style.display = "block";
-                        }
-                    });
-                }
-            </script>-->
+            .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: white;
+            }
+        </style>
 
-       
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>-->
+
+
     </form>
 
     <script src="../static/scripts/js/probaindex.js"></script>

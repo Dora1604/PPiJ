@@ -9,704 +9,725 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <html>
+
 <body>
 
-    <form action="{{ url_for('nesto2') }}" method="post">
+
+    <style>
+        img.sticky {
+            position: sticky;
+            position: sticky;
+            top: 0;
+            width: 170px;
+            margin-left: 80%;
+            border-radius: 50%;
+            margin-top: 5%;
+            border: 7px solid #FEED67;
+            z-index: 1;
+        }
+    </style>
+ 
+        <img class="sticky" src="../static/images/gleen.png" alt="Avatar">
 
 
-        
-        <div id="option2A" style="margin-top:5%; ">
-            <div id="opt2search" style="margin-bottom:5%;">
-                <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-                    <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-                    </div>
-                    <div class="col-sm">
-                        <div class="dropdownDest">
-                            <div class="text__center">
-                                <select name="city" class="cs-select cs-skin-elastic">
-                                    <option value="" selected="selected">Choose a city</option>
-                                    <option value="zagreb">ZAGREB</option>
-                                    <option value="osijek">OSIJEK</option>
-                                    <option value="pula">PULA</option>
-                                    <option value="split">SPLIT</option>
-                                    <option value="dubrovnik">DUBROVNIK</option>
-                                    <option value="zadar">ZADAR</option>
-                                    <option value="rijeka">RIJEKA</option>
-                                    <option value="varazdin">VARAŽDIN</option>
-                                    <option value="sibenik">ŠIBENIK</option>
-                                </select>
-                            </div>
+
+        <form action="{{ url_for('nesto2') }}" method="post">
+
+
+
+            <div id="option2A" style="margin-top:10%; ">
+
+                <div id="opt2search" style="margin-bottom:5%;">
+                    <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+                        <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+
                         </div>
-                    </div>
-
-                    <div class="col-sm">
-                        <div class="dropdownSeason">
-                            <div class="text__center">
-                                <select name="season" class="cs-select cs-skin-elastic">
-                                    <option value="" selected="selected">Choose a season</option>
-                                    <option value="summer">SUMMER</option>
-                                    <option value="autumn">AUTUMN</option>
-                                    <option value="winter">WINTER</option>
-                                    <option value="spring">SPRING</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-                    </div>
-                </div>
-
-
-            </div>
-            <div style="text-align:center; margin-bottom:5%">
-                <input type="submit" class="button pdf">
-
-                <style>
-                    input[type="submit" i] {
-                        background-color: #083d77;
-                        color: antiquewhite;
-                        border-color: #083d77;
-                    }
-                </style>
-
-            </div>
-            
-
-            <div id="opt2resA" style="width:90%">
-                <div style="width:100%">
-                    <button type="button" class="collapsible" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large;padding-left:2%">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 0 %}
-                        <dd>{{ key|e }}</dd>
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </button>
-                    <div class="content">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 0 %}
-                        {% for key1, value1 in value.items() %}
-                        <dd>{{ key1|e }} {{ value1|e }}</dd>
-                        <!--<dd></dd>-->
-                        {% endfor %}
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </div>
-                </div>
-                <div style="width:100%">
-                    <button type="button" class="collapsible" id="middlemonth" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large; padding-left:2%">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 1 %}
-                        <dd>{{ key|e }}</dd>
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </button>
-                    <div class="content">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 1 %}
-                        {% for key1, value1 in value.items() %}
-                        <dd>{{ key1|e }} {{ value1|e }}</dd>
-                        {% endfor %}
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </div>
-                </div >
-
-                <div style="width:100%">
-                    <button type="button" class="collapsible" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large;padding-left:2%">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 2 %}
-                        <dd>{{ key|e }}</dd>
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </button>
-                    <div class="content">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 2 %}
-                        {% for key1, value1 in value.items() %}
-                        <dd>{{ key1|e }} {{ value1|e }}</dd>
-                        {% endfor %}
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </div>
-                </div>
-               
-                <div style="width:100%">
-                    <button type="button" class="collapsible" id="middlemonth" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large;padding-left:2%">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 3 %}
-                        <dd>{{ key|e }}</dd>
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </button>
-                    <div class="content">
-                        {% set count = namespace(value = 0) %}
-                        {% for key, value in mapa2.items() %}
-                        {% if count.value == 3 %}
-                        {% for key1, value1 in value.items() %}
-                        <dd>{{ key1|e }} {{ value1|e }}</dd>
-                        {% endfor %}
-                        {% endif %}
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </div>
-                </div>
-               
-            </div>
-            <div id="opt2export">
-                <div class="container buttons">
-                    <div class="row">
                         <div class="col-sm">
-                            ''
+                            <div class="dropdownDest" style="border-bottom: 2px solid #083d77">
+                                <div class="text__center">
+                                    <select name="city" class="cs-select cs-skin-elastic">
+                                        <option value="" selected="selected">Choose a city</option>
+                                        <option value="zagreb">ZAGREB</option>
+                                        <option value="osijek">OSIJEK</option>
+                                        <option value="pula">PULA</option>
+                                        <option value="split">SPLIT</option>
+                                        <option value="dubrovnik">DUBROVNIK</option>
+                                        <option value="zadar">ZADAR</option>
+                                        <option value="rijeka">RIJEKA</option>
+                                        <option value="varazdin">VARAŽDIN</option>
+                                        <option value="sibenik">ŠIBENIK</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm" id="pdf">
-                            <a class="button pdf">Export to PDF</a>
+
+                        <div class="col-sm">
+                            <div class="dropdownSeason" style="border-bottom: 2px solid #083d77">
+                                <div class="text__center">
+                                    <select name="season" class="cs-select cs-skin-elastic">
+                                        <option value="" selected="selected">Choose a season</option>
+                                        <option value="summer">SUMMER</option>
+                                        <option value="autumn">AUTUMN</option>
+                                        <option value="winter">WINTER</option>
+                                        <option value="spring">SPRING</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm" id="right_button">
-                            <a class="button chooseagain" onclick="newDest()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+                        <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div style="text-align:center; margin-bottom:5%">
+                    <input type="submit" class="button pdf">
+
+                    <style>
+                        input[type="submit" i] {
+                            background-color: #083d77;
+                            color: antiquewhite;
+                            border-color: #083d77;
+                        }
+                    </style>
+
+                </div>
+
+
+                <div id="opt2resA" style="width:90%">
+                    <div style="width:100%">
+                        <button type="button" class="collapsible" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large;padding-left:2%">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 0 %}
+                            <dd>{{ key|e }}</dd>
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </button>
+                        <div class="content">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 0 %}
+                            {% for key1, value1 in value.items() %}
+                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            <!--<dd></dd>-->
+                            {% endfor %}
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div style="width:100%">
+                        <button type="button" class="collapsible" id="middlemonth" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large; padding-left:2%">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 1 %}
+                            <dd>{{ key|e }}</dd>
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </button>
+                        <div class="content">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 1 %}
+                            {% for key1, value1 in value.items() %}
+                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            {% endfor %}
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div style="width:100%">
+                        <button type="button" class="collapsible" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large;padding-left:2%">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 2 %}
+                            <dd>{{ key|e }}</dd>
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </button>
+                        <div class="content">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 2 %}
+                            {% for key1, value1 in value.items() %}
+                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            {% endfor %}
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div style="width:100%">
+                        <button type="button" class="collapsible" id="middlemonth" style="height: 10%;margin-bottom:0;font-weight: bold; letter-spacing: 7px; font-size:x-large;padding-left:2%">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 3 %}
+                            <dd>{{ key|e }}</dd>
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </button>
+                        <div class="content">
+                            {% set count = namespace(value = 0) %}
+                            {% for key, value in mapa2.items() %}
+                            {% if count.value == 3 %}
+                            {% for key1, value1 in value.items() %}
+                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            {% endfor %}
+                            {% endif %}
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+                <div id="opt2export">
+                    <div class="container buttons">
+                        <div class="row">
+                            <div class="col-sm">
+                                ''
+                            </div>
+                            <div class="col-sm" id="pdf">
+                                <a class="button pdf">Export to PDF</a>
+                            </div>
+                            <div class="col-sm" id="right_button">
+                                <a class="button chooseagain" onclick="newDest()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
 
-            <script>
-                //courtesy to the super coder I can't recall
-                ! function (e) {
-                    "use strict";
-
-                    function t(e) {
-                        return new RegExp("(^|\\s+)" + e + "(\\s+|$)")
-                    }
-
-                    function s(e, t) {
-                        var s = l(e, t) ? i : n;
-                        s(e, t)
-                    }
-                    var l, n, i;
-                    "classList" in document.documentElement ? (l = function (e, t) {
-                        return e.classList.contains(t)
-                    }, n = function (e, t) {
-                        e.classList.add(t)
-                    }, i = function (e, t) {
-                        e.classList.remove(t)
-                    }) : (l = function (e, s) {
-                        return t(s).test(e.className)
-                    }, n = function (e, t) {
-                        l(e, t) || (e.className = e.className + " " + t)
-                    }, i = function (e, s) {
-                        e.className = e.className.replace(t(s), " ")
-                    });
-                    var c = {
-                        hasClass: l,
-                        addClass: n,
-                        removeClass: i,
-                        toggleClass: s,
-                        has: l,
-                        add: n,
-                        remove: i,
-                        toggle: s
-                    };
-                    "function" == typeof define && define.amd ? define(c) : e.classie = c
-                }(window),
-                    function (e) {
+                <script>
+                    //courtesy to the super coder I can't recall
+                    ! function (e) {
                         "use strict";
 
-                        function t(e, t) {
-                            if (!e) return !1;
-                            for (var s = e.target || e.srcElement || e || !1; s && s != t;) s = s.parentNode || !1;
-                            return s !== !1
+                        function t(e) {
+                            return new RegExp("(^|\\s+)" + e + "(\\s+|$)")
                         }
 
                         function s(e, t) {
-                            for (var s in t) t.hasOwnProperty(s) && (e[s] = t[s]);
-                            return e
+                            var s = l(e, t) ? i : n;
+                            s(e, t)
                         }
-
-                        function l(e, t) {
-                            this.el = e, this.options = s({}, this.options), s(this.options, t), this._init()
-                        }
-                        l.prototype.options = {
-                            newTab: !0,
-                            stickyPlaceholder: !0,
-                            onChange: function () {
-                                return !1
-                            }
-                        }, l.prototype._init = function () {
-                            var e = this.el.querySelector("option[selected]");
-                            this.hasDefaultPlaceholder = e && e.disabled, this.selectedOpt = e || this.el.querySelector("option"), this._createSelectEl(), this.selOpts = [].slice.call(this.selEl.querySelectorAll("li[data-option]")), this.selOptsCount = this.selOpts.length, this.current = this.selOpts.indexOf(this.selEl.querySelector("li.cs-selected")) || -1, this.selPlaceholder = this.selEl.querySelector("span.cs-placeholder"), this._initEvents()
-                        }, l.prototype._createSelectEl = function () {
-                            var e = "",
-                                t = function (e) {
-                                    var t = "",
-                                        s = "",
-                                        l = "";
-                                    return !e.selectedOpt || this.foundSelected || this.hasDefaultPlaceholder || (s += "cs-selected ", this.foundSelected = !0), e.getAttribute("data-class") && (s += e.getAttribute("data-class")), e.getAttribute("data-link") && (l = "data-link=" + e.getAttribute("data-link")), "" !== s && (t = 'class="' + s + '" '), "<li " + t + l + ' data-option data-value="' + e.value + '"><span>' + e.textContent + "</span></li>"
-                                };
-                            [].slice.call(this.el.children).forEach(function (s) {
-                                if (!s.disabled) {
-                                    var l = s.tagName.toLowerCase();
-                                    "option" === l ? e += t(s) : "optgroup" === l && (e += '<li class="cs-optgroup"><span>' + s.label + "</span><ul>", [].slice.call(s.children).forEach(function (s) {
-                                        e += t(s)
-                                    }), e += "</ul></li>")
-                                }
-                            });
-                            var s = '<div class="cs-options"><ul>' + e + "</ul></div>";
-                            this.selEl = document.createElement("div"), this.selEl.className = this.el.className, this.selEl.tabIndex = this.el.tabIndex, this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + "</span>" + s, this.el.parentNode.appendChild(this.selEl), this.selEl.appendChild(this.el)
-                        }, l.prototype._initEvents = function () {
-                            var e = this;
-                            this.selPlaceholder.addEventListener("click", function () {
-                                e._toggleSelect()
-                            }), this.selOpts.forEach(function (t, s) {
-                                t.addEventListener("click", function () {
-                                    e.current = s, e._changeOption(), e._toggleSelect()
-                                })
-                            }), document.addEventListener("click", function (s) {
-                                var l = s.target;
-                                e._isOpen() && l !== e.selEl && !t(l, e.selEl) && e._toggleSelect()
-                            }), this.selEl.addEventListener("keydown", function (t) {
-                                var s = t.keyCode || t.which;
-                                switch (s) {
-                                    case 38:
-                                        t.preventDefault(), e._navigateOpts("prev");
-                                        break;
-                                    case 40:
-                                        t.preventDefault(), e._navigateOpts("next");
-                                        break;
-                                    case 32:
-                                        t.preventDefault(), e._isOpen() && "undefined" != typeof e.preSelCurrent && -1 !== e.preSelCurrent && e._changeOption(), e._toggleSelect();
-                                        break;
-                                    case 13:
-                                        t.preventDefault(), e._isOpen() && "undefined" != typeof e.preSelCurrent && -1 !== e.preSelCurrent && (e._changeOption(), e._toggleSelect());
-                                        break;
-                                    case 27:
-                                        t.preventDefault(), e._isOpen() && e._toggleSelect()
-                                }
-                            })
-                        }, l.prototype._navigateOpts = function (e) {
-                            this._isOpen() || this._toggleSelect();
-                            var t = "undefined" != typeof this.preSelCurrent && -1 !== this.preSelCurrent ? this.preSelCurrent : this.current;
-                            ("prev" === e && t > 0 || "next" === e && t < this.selOptsCount - 1) && (this.preSelCurrent = "next" === e ? t + 1 : t - 1, this._removeFocus(), classie.add(this.selOpts[this.preSelCurrent], "cs-focus"))
-                        }, l.prototype._toggleSelect = function () {
-                            this._removeFocus(), this._isOpen() ? (-1 !== this.current && (this.selPlaceholder.textContent = this.selOpts[this.current].textContent), classie.remove(this.selEl, "cs-active")) : (this.hasDefaultPlaceholder && this.options.stickyPlaceholder && (this.selPlaceholder.textContent = this.selectedOpt.textContent), classie.add(this.selEl, "cs-active"))
-                        }, l.prototype._changeOption = function () {
-                            "undefined" != typeof this.preSelCurrent && -1 !== this.preSelCurrent && (this.current = this.preSelCurrent, this.preSelCurrent = -1);
-                            var t = this.selOpts[this.current];
-                            this.selPlaceholder.textContent = t.textContent, this.el.value = t.getAttribute("data-value");
-                            var s = this.selEl.querySelector("li.cs-selected");
-                            s && classie.remove(s, "cs-selected"), classie.add(t, "cs-selected"), t.getAttribute("data-link") && (this.options.newTab ? e.open(t.getAttribute("data-link"), "_blank") : e.location = t.getAttribute("data-link")), this.options.onChange(this.el.value)
-                        }, l.prototype._isOpen = function () {
-                            return classie.has(this.selEl, "cs-active")
-                        }, l.prototype._removeFocus = function () {
-                            var e = this.selEl.querySelector("li.cs-focus");
-                            e && classie.remove(e, "cs-focus")
-                        }, e.SelectFx = l
+                        var l, n, i;
+                        "classList" in document.documentElement ? (l = function (e, t) {
+                            return e.classList.contains(t)
+                        }, n = function (e, t) {
+                            e.classList.add(t)
+                        }, i = function (e, t) {
+                            e.classList.remove(t)
+                        }) : (l = function (e, s) {
+                            return t(s).test(e.className)
+                        }, n = function (e, t) {
+                            l(e, t) || (e.className = e.className + " " + t)
+                        }, i = function (e, s) {
+                            e.className = e.className.replace(t(s), " ")
+                        });
+                        var c = {
+                            hasClass: l,
+                            addClass: n,
+                            removeClass: i,
+                            toggleClass: s,
+                            has: l,
+                            add: n,
+                            remove: i,
+                            toggle: s
+                        };
+                        "function" == typeof define && define.amd ? define(c) : e.classie = c
                     }(window),
-                    function () {
-                        [].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (e) {
-                            new SelectFx(e)
-                        })
-                    }();
-            </script>
-            <style>
+                        function (e) {
+                            "use strict";
 
-                /* Default custom select styles */
-                .text__center {
-                    text-align: center;
-                }
+                            function t(e, t) {
+                                if (!e) return !1;
+                                for (var s = e.target || e.srcElement || e || !1; s && s != t;) s = s.parentNode || !1;
+                                return s !== !1
+                            }
 
-                div.cs-select {
-                    position: relative;
-                    z-index: 100;
-                    display: inline-block;
-                    width: 100%;
-                    max-width: 500px;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                    text-align: left;
-                    vertical-align: middle;
-                    background: #fff;
-                    -webkit-touch-callout: none;
-                    -khtml-user-select: none;
-                }
+                            function s(e, t) {
+                                for (var s in t) t.hasOwnProperty(s) && (e[s] = t[s]);
+                                return e
+                            }
 
-                    div.cs-select:focus {
-                        outline: none;
-                        /* For better accessibility add a style for this in your skin */
+                            function l(e, t) {
+                                this.el = e, this.options = s({}, this.options), s(this.options, t), this._init()
+                            }
+                            l.prototype.options = {
+                                newTab: !0,
+                                stickyPlaceholder: !0,
+                                onChange: function () {
+                                    return !1
+                                }
+                            }, l.prototype._init = function () {
+                                var e = this.el.querySelector("option[selected]");
+                                this.hasDefaultPlaceholder = e && e.disabled, this.selectedOpt = e || this.el.querySelector("option"), this._createSelectEl(), this.selOpts = [].slice.call(this.selEl.querySelectorAll("li[data-option]")), this.selOptsCount = this.selOpts.length, this.current = this.selOpts.indexOf(this.selEl.querySelector("li.cs-selected")) || -1, this.selPlaceholder = this.selEl.querySelector("span.cs-placeholder"), this._initEvents()
+                            }, l.prototype._createSelectEl = function () {
+                                var e = "",
+                                    t = function (e) {
+                                        var t = "",
+                                            s = "",
+                                            l = "";
+                                        return !e.selectedOpt || this.foundSelected || this.hasDefaultPlaceholder || (s += "cs-selected ", this.foundSelected = !0), e.getAttribute("data-class") && (s += e.getAttribute("data-class")), e.getAttribute("data-link") && (l = "data-link=" + e.getAttribute("data-link")), "" !== s && (t = 'class="' + s + '" '), "<li " + t + l + ' data-option data-value="' + e.value + '"><span>' + e.textContent + "</span></li>"
+                                    };
+                                [].slice.call(this.el.children).forEach(function (s) {
+                                    if (!s.disabled) {
+                                        var l = s.tagName.toLowerCase();
+                                        "option" === l ? e += t(s) : "optgroup" === l && (e += '<li class="cs-optgroup"><span>' + s.label + "</span><ul>", [].slice.call(s.children).forEach(function (s) {
+                                            e += t(s)
+                                        }), e += "</ul></li>")
+                                    }
+                                });
+                                var s = '<div class="cs-options"><ul>' + e + "</ul></div>";
+                                this.selEl = document.createElement("div"), this.selEl.className = this.el.className, this.selEl.tabIndex = this.el.tabIndex, this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + "</span>" + s, this.el.parentNode.appendChild(this.selEl), this.selEl.appendChild(this.el)
+                            }, l.prototype._initEvents = function () {
+                                var e = this;
+                                this.selPlaceholder.addEventListener("click", function () {
+                                    e._toggleSelect()
+                                }), this.selOpts.forEach(function (t, s) {
+                                    t.addEventListener("click", function () {
+                                        e.current = s, e._changeOption(), e._toggleSelect()
+                                    })
+                                }), document.addEventListener("click", function (s) {
+                                    var l = s.target;
+                                    e._isOpen() && l !== e.selEl && !t(l, e.selEl) && e._toggleSelect()
+                                }), this.selEl.addEventListener("keydown", function (t) {
+                                    var s = t.keyCode || t.which;
+                                    switch (s) {
+                                        case 38:
+                                            t.preventDefault(), e._navigateOpts("prev");
+                                            break;
+                                        case 40:
+                                            t.preventDefault(), e._navigateOpts("next");
+                                            break;
+                                        case 32:
+                                            t.preventDefault(), e._isOpen() && "undefined" != typeof e.preSelCurrent && -1 !== e.preSelCurrent && e._changeOption(), e._toggleSelect();
+                                            break;
+                                        case 13:
+                                            t.preventDefault(), e._isOpen() && "undefined" != typeof e.preSelCurrent && -1 !== e.preSelCurrent && (e._changeOption(), e._toggleSelect());
+                                            break;
+                                        case 27:
+                                            t.preventDefault(), e._isOpen() && e._toggleSelect()
+                                    }
+                                })
+                            }, l.prototype._navigateOpts = function (e) {
+                                this._isOpen() || this._toggleSelect();
+                                var t = "undefined" != typeof this.preSelCurrent && -1 !== this.preSelCurrent ? this.preSelCurrent : this.current;
+                                ("prev" === e && t > 0 || "next" === e && t < this.selOptsCount - 1) && (this.preSelCurrent = "next" === e ? t + 1 : t - 1, this._removeFocus(), classie.add(this.selOpts[this.preSelCurrent], "cs-focus"))
+                            }, l.prototype._toggleSelect = function () {
+                                this._removeFocus(), this._isOpen() ? (-1 !== this.current && (this.selPlaceholder.textContent = this.selOpts[this.current].textContent), classie.remove(this.selEl, "cs-active")) : (this.hasDefaultPlaceholder && this.options.stickyPlaceholder && (this.selPlaceholder.textContent = this.selectedOpt.textContent), classie.add(this.selEl, "cs-active"))
+                            }, l.prototype._changeOption = function () {
+                                "undefined" != typeof this.preSelCurrent && -1 !== this.preSelCurrent && (this.current = this.preSelCurrent, this.preSelCurrent = -1);
+                                var t = this.selOpts[this.current];
+                                this.selPlaceholder.textContent = t.textContent, this.el.value = t.getAttribute("data-value");
+                                var s = this.selEl.querySelector("li.cs-selected");
+                                s && classie.remove(s, "cs-selected"), classie.add(t, "cs-selected"), t.getAttribute("data-link") && (this.options.newTab ? e.open(t.getAttribute("data-link"), "_blank") : e.location = t.getAttribute("data-link")), this.options.onChange(this.el.value)
+                            }, l.prototype._isOpen = function () {
+                                return classie.has(this.selEl, "cs-active")
+                            }, l.prototype._removeFocus = function () {
+                                var e = this.selEl.querySelector("li.cs-focus");
+                                e && classie.remove(e, "cs-focus")
+                            }, e.SelectFx = l
+                        }(window),
+                        function () {
+                            [].slice.call(document.querySelectorAll("select.cs-select")).forEach(function (e) {
+                                new SelectFx(e)
+                            })
+                        }();
+                </script>
+                <style>
+
+                    /* Default custom select styles */
+                    .text__center {
+                        text-align: center;
                     }
 
-                .cs-select select {
-                    display: none;
-                }
-
-                .cs-select span {
-                    position: relative;
-                    display: block;
-                    overflow: hidden;
-                    padding: 0;
-                    cursor: pointer;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                }
-                /* Placeholder and selected option */
-
-                .cs-select > span {
-                    padding-right: 3em;
-                }
-
-                    .cs-select > span::after,
-                    .cs-select .cs-selected span::after {
-                        position: absolute;
-                        top: 50%;
-                        -webkit-transform: translateY(-50%);
-                        transform: translateY(-50%);
-                        speak: none;
-                        -webkit-font-smoothing: antialiased;
-                        -moz-osx-font-smoothing: grayscale;
+                    div.cs-select {
+                        position: relative;
+                        z-index: 100;
+                        display: inline-block;
+                        width: 100%;
+                        max-width: 500px;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        text-align: left;
+                        vertical-align: middle;
+                        background: #fff;
+                        -webkit-touch-callout: none;
+                        -khtml-user-select: none;
                     }
 
-                    .cs-select > span::after {
-                        right: 1em;
-                        content: '\25BE';
-                    }
-
-                .cs-select .cs-selected span::after {
-                    margin-left: 1em;
-                    content: '\2713';
-                }
-
-                .cs-select.cs-active > span::after {
-                    -webkit-transform: translateY(-50%) rotate(180deg);
-                    transform: translateY(-50%) rotate(180deg);
-                }
-
-                div.cs-active {
-                    z-index: 200;
-                }
-                /* Options */
-
-                .cs-select .cs-options {
-                    position: absolute;
-                    visibility: hidden;
-                    overflow: hidden;
-                    width: 100%;
-                    background: #fff;
-                }
-
-                .cs-select.cs-active .cs-options {
-                    visibility: visible;
-                }
-
-                .cs-select ul {
-                    width: 100%;
-                    margin: 0;
-                    padding: 0;
-                    list-style: none;
-                }
-
-                    .cs-select ul span {
-                        padding: 1px;
-                    }
-
-                    .cs-select ul li.cs-focus span {
-                        background-color: white; /*boja opcija*/
-                    }
-                /* Optgroup and optgroup label */
-
-                .cs-select li.cs-optgroup ul {
-                    padding-left: 1em;
-                }
-
-                .cs-select li.cs-optgroup > span {
-                    cursor: default;
-                }
-
-                div.cs-skin-elastic {
-                    font-size: 1.5em;
-                    font-weight: 700;
-                    color: #083d77; /*boja naslova*/
-                    background: transparent;
-                }
-
-                @media screen and (max-width: 30em) {
-                    div.cs-skin-elastic {
-                        font-size: 1em;
-                    }
-                }
-
-                .cs-skin-elastic > span {
-                    z-index: 100;
-                    background-color: white; /*boja glavna*/
-                }
-
-                .cs-skin-elastic .cs-options {
-                    visibility: visible;
-                    overflow: visible;
-                    padding-bottom: 1.25em;
-                    pointer-events: none;
-                    opacity: 1;
-                    background: transparent;
-                }
-
-                .cs-skin-elastic.cs-active .cs-options {
-                    pointer-events: auto;
-                }
-
-                .cs-skin-elastic .cs-options > ul::before {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    content: '';
-                    -webkit-transition: -webkit-transform .3s;
-                    transition: transform .3s;
-                    -webkit-transform: scale3d(1, 0, 1);
-                    transform: scale3d(1, 0, 1);
-                    -webkit-transform-origin: 50% 0;
-                    transform-origin: 50% 0;
-                    background: white; /*boja opcija*/
-                }
-
-                .cs-skin-elastic.cs-active .cs-options > ul::before {
-                    -webkit-transition: none;
-                    transition: none;
-                    -webkit-transform: scale3d(1, 1, 1);
-                    transform: scale3d(1, 1, 1);
-                    -webkit-animation: expand .6s ease-out;
-                    animation: expand .6s ease-out;
-                }
-
-                .cs-skin-elastic .cs-options ul li {
-                    -webkit-transition: opacity .15s, -webkit-transform .15s;
-                    transition: opacity .15s, transform .15s;
-                    -webkit-transform: translate3d(0, -25px, 0);
-                    transform: translate3d(0, -25px, 0);
-                    opacity: 0;
-                }
-
-                .cs-skin-elastic.cs-active .cs-options ul li {
-                    -webkit-transition: none;
-                    transition: none;
-                    -webkit-transform: translate3d(0, 0, 0);
-                    transform: translate3d(0, 0, 0);
-                    -webkit-animation: bounce .6s ease-out;
-                    animation: bounce .6s ease-out;
-                    opacity: 1;
-                }
-
-                .cs-skin-elastic .cs-options span {
-                    background-repeat: no-repeat;
-                    background-position: 1.5em 50%;
-                    background-size: 2em auto;
-                }
-
-                    .cs-skin-elastic .cs-options span:hover,
-                    .cs-skin-elastic .cs-options li.cs-focus span,
-                    .cs-skin-elastic .cs-options .cs-selected span {
-                        color: #8ba8c7; /*hoverano*/
-                    }
-
-                        .cs-skin-elastic .cs-options .cs-selected span::after {
-                            content: '';
+                        div.cs-select:focus {
+                            outline: none;
+                            /* For better accessibility add a style for this in your skin */
                         }
 
-                @-webkit-keyframes expand {
-                    0% {
-                        -webkit-transform: scale3d(1, 0, 1);
+                    .cs-select select {
+                        display: none;
                     }
 
-                    25% {
-                        -webkit-transform: scale3d(1, 1.2, 1);
+                    .cs-select span {
+                        position: relative;
+                        display: block;
+                        overflow: hidden;
+                        padding: 0;
+                        cursor: pointer;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    /* Placeholder and selected option */
+
+                    .cs-select > span {
+                        padding-right: 3em;
                     }
 
-                    50% {
-                        -webkit-transform: scale3d(1, .85, 1);
+                        .cs-select > span::after,
+                        .cs-select .cs-selected span::after {
+                            position: absolute;
+                            top: 50%;
+                            -webkit-transform: translateY(-50%);
+                            transform: translateY(-50%);
+                            speak: none;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                        }
+
+                        .cs-select > span::after {
+                            right: 1em;
+                            content: '\25BE';
+                        }
+
+                    .cs-select .cs-selected span::after {
+                        margin-left: 1em;
+                        content: '\2713';
                     }
 
-                    75% {
-                        -webkit-transform: scale3d(1, 1.05, 1);
+                    .cs-select.cs-active > span::after {
+                        -webkit-transform: translateY(-50%) rotate(180deg);
+                        transform: translateY(-50%) rotate(180deg);
                     }
 
-                    100% {
-                        -webkit-transform: scale3d(1, 1, 1);
+                    div.cs-active {
+                        z-index: 200;
                     }
-                }
+                    /* Options */
 
-                @keyframes expand {
-                    0% {
+                    .cs-select .cs-options {
+                        position: absolute;
+                        visibility: hidden;
+                        overflow: hidden;
+                        width: 100%;
+                        background: #fff;
+                    }
+
+                    .cs-select.cs-active .cs-options {
+                        visibility: visible;
+                    }
+
+                    .cs-select ul {
+                        width: 100%;
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                    }
+
+                        .cs-select ul span {
+                            padding: 1px;
+                        }
+
+                        .cs-select ul li.cs-focus span {
+                            background-color: white; /*boja opcija*/
+                        }
+                    /* Optgroup and optgroup label */
+
+                    .cs-select li.cs-optgroup ul {
+                        padding-left: 1em;
+                    }
+
+                    .cs-select li.cs-optgroup > span {
+                        cursor: default;
+                    }
+
+                    div.cs-skin-elastic {
+                        font-size: 1.5em;
+                        font-weight: 700;
+                        color: #083d77; /*boja naslova*/
+                        background: transparent;
+                    }
+
+                    @media screen and (max-width: 30em) {
+                        div.cs-skin-elastic {
+                            font-size: 1em;
+                        }
+                    }
+
+                    .cs-skin-elastic > span {
+                        z-index: 100;
+                        background-color: white; /*boja glavna*/
+                    }
+
+                    .cs-skin-elastic .cs-options {
+                        visibility: visible;
+                        overflow: visible;
+                        padding-bottom: 1.25em;
+                        pointer-events: none;
+                        opacity: 1;
+                        background: transparent;
+                    }
+
+                    .cs-skin-elastic.cs-active .cs-options {
+                        pointer-events: auto;
+                    }
+
+                    .cs-skin-elastic .cs-options > ul::before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        -webkit-transition: -webkit-transform .3s;
+                        transition: transform .3s;
                         -webkit-transform: scale3d(1, 0, 1);
                         transform: scale3d(1, 0, 1);
+                        -webkit-transform-origin: 50% 0;
+                        transform-origin: 50% 0;
+                        background: white; /*boja opcija*/
                     }
 
-                    25% {
-                        -webkit-transform: scale3d(1, 1.2, 1);
-                        transform: scale3d(1, 1.2, 1);
-                    }
-
-                    50% {
-                        -webkit-transform: scale3d(1, .85, 1);
-                        transform: scale3d(1, .85, 1);
-                    }
-
-                    75% {
-                        -webkit-transform: scale3d(1, 1.05, 1);
-                        transform: scale3d(1, 1.05, 1);
-                    }
-
-                    100% {
+                    .cs-skin-elastic.cs-active .cs-options > ul::before {
+                        -webkit-transition: none;
+                        transition: none;
                         -webkit-transform: scale3d(1, 1, 1);
                         transform: scale3d(1, 1, 1);
-                    }
-                }
-
-                @-webkit-keyframes bounce {
-                    0% {
-                        -webkit-transform: translate3d(0, -25px, 0);
-                        opacity: 0;
+                        -webkit-animation: expand .6s ease-out;
+                        animation: expand .6s ease-out;
                     }
 
-                    25% {
-                        -webkit-transform: translate3d(0, 10px, 0);
-                    }
-
-                    50% {
-                        -webkit-transform: translate3d(0, -6px, 0);
-                    }
-
-                    75% {
-                        -webkit-transform: translate3d(0, 2px, 0);
-                    }
-
-                    100% {
-                        -webkit-transform: translate3d(0, 0, 0);
-                        opacity: 1;
-                    }
-                }
-
-                @keyframes bounce {
-                    0% {
+                    .cs-skin-elastic .cs-options ul li {
+                        -webkit-transition: opacity .15s, -webkit-transform .15s;
+                        transition: opacity .15s, transform .15s;
                         -webkit-transform: translate3d(0, -25px, 0);
                         transform: translate3d(0, -25px, 0);
                         opacity: 0;
                     }
 
-                    25% {
-                        -webkit-transform: translate3d(0, 10px, 0);
-                        transform: translate3d(0, 10px, 0);
-                    }
-
-                    50% {
-                        -webkit-transform: translate3d(0, -6px, 0);
-                        transform: translate3d(0, -6px, 0);
-                    }
-
-                    75% {
-                        -webkit-transform: translate3d(0, 2px, 0);
-                        transform: translate3d(0, 2px, 0);
-                    }
-
-                    100% {
+                    .cs-skin-elastic.cs-active .cs-options ul li {
+                        -webkit-transition: none;
+                        transition: none;
                         -webkit-transform: translate3d(0, 0, 0);
                         transform: translate3d(0, 0, 0);
+                        -webkit-animation: bounce .6s ease-out;
+                        animation: bounce .6s ease-out;
                         opacity: 1;
                     }
-                }
-            </style>
 
+                    .cs-skin-elastic .cs-options span {
+                        background-repeat: no-repeat;
+                        background-position: 1.5em 50%;
+                        background-size: 2em auto;
+                    }
 
-            <style>
-                .collapsible {
-                    background-color: #FEED67;
-                    padding: 2px 2px 2px 2px;
-                    font-family: 'Baloo Chettan 2', cursive;
-                    cursor: pointer;
-                    width: 100%;
-                    border: none;
-                    text-align: left;
-                    outline: none;
-                    font-size: 30px;
-                    color:#F46710;
-                    margin: 5% 5% 5% 5%;
-                    
-                    border-radius: 10px;
-                    box-shadow: 10px 10px #F46710;
-                }
-
-                #middlemonth {
-                    background-color: #ffffe0;
-                    padding: 2px 2px 2px 2px;
-                    font-family: 'Baloo Chettan 2', cursive;
-                    cursor: pointer;
-                    width: 100%;
-                    border: none;
-                    text-align: left;
-                    outline: none;
-                    font-size: 15px;
-                }
-
-                .active, .collapsible:hover {
-                    background-color: #FEED67;
-                    border: none;
-                }
-
-                .content {
-                    padding-top: 2%;
-                    padding-left: 7%;
-                    display: none;
-                    overflow: hidden;
-                    background-color: white;
-                    color: #083d77;
-                    font-size:large;
-                    font-weight:bold;
-                }
-            </style>
-
-            <script>
-                var coll = document.getElementsByClassName("collapsible");
-                var i;
-                for (i = 0; i < coll.length; i++) {
-                    coll[i].addEventListener("click", function () {
-                        this.classList.toggle("active");
-                        var content = this.nextElementSibling;
-                        if (content.style.display === "block") {
-                            content.style.display = "none";
-                        } else {
-                            content.style.display = "block";
+                        .cs-skin-elastic .cs-options span:hover,
+                        .cs-skin-elastic .cs-options li.cs-focus span,
+                        .cs-skin-elastic .cs-options .cs-selected span {
+                            color: #8ba8c7; /*hoverano*/
                         }
-                    });
-                }
-            </script>
+
+                            .cs-skin-elastic .cs-options .cs-selected span::after {
+                                content: '';
+                            }
+
+                    @-webkit-keyframes expand {
+                        0% {
+                            -webkit-transform: scale3d(1, 0, 1);
+                        }
+
+                        25% {
+                            -webkit-transform: scale3d(1, 1.2, 1);
+                        }
+
+                        50% {
+                            -webkit-transform: scale3d(1, .85, 1);
+                        }
+
+                        75% {
+                            -webkit-transform: scale3d(1, 1.05, 1);
+                        }
+
+                        100% {
+                            -webkit-transform: scale3d(1, 1, 1);
+                        }
+                    }
+
+                    @keyframes expand {
+                        0% {
+                            -webkit-transform: scale3d(1, 0, 1);
+                            transform: scale3d(1, 0, 1);
+                        }
+
+                        25% {
+                            -webkit-transform: scale3d(1, 1.2, 1);
+                            transform: scale3d(1, 1.2, 1);
+                        }
+
+                        50% {
+                            -webkit-transform: scale3d(1, .85, 1);
+                            transform: scale3d(1, .85, 1);
+                        }
+
+                        75% {
+                            -webkit-transform: scale3d(1, 1.05, 1);
+                            transform: scale3d(1, 1.05, 1);
+                        }
+
+                        100% {
+                            -webkit-transform: scale3d(1, 1, 1);
+                            transform: scale3d(1, 1, 1);
+                        }
+                    }
+
+                    @-webkit-keyframes bounce {
+                        0% {
+                            -webkit-transform: translate3d(0, -25px, 0);
+                            opacity: 0;
+                        }
+
+                        25% {
+                            -webkit-transform: translate3d(0, 10px, 0);
+                        }
+
+                        50% {
+                            -webkit-transform: translate3d(0, -6px, 0);
+                        }
+
+                        75% {
+                            -webkit-transform: translate3d(0, 2px, 0);
+                        }
+
+                        100% {
+                            -webkit-transform: translate3d(0, 0, 0);
+                            opacity: 1;
+                        }
+                    }
+
+                    @keyframes bounce {
+                        0% {
+                            -webkit-transform: translate3d(0, -25px, 0);
+                            transform: translate3d(0, -25px, 0);
+                            opacity: 0;
+                        }
+
+                        25% {
+                            -webkit-transform: translate3d(0, 10px, 0);
+                            transform: translate3d(0, 10px, 0);
+                        }
+
+                        50% {
+                            -webkit-transform: translate3d(0, -6px, 0);
+                            transform: translate3d(0, -6px, 0);
+                        }
+
+                        75% {
+                            -webkit-transform: translate3d(0, 2px, 0);
+                            transform: translate3d(0, 2px, 0);
+                        }
+
+                        100% {
+                            -webkit-transform: translate3d(0, 0, 0);
+                            transform: translate3d(0, 0, 0);
+                            opacity: 1;
+                        }
+                    }
+                </style>
 
 
-        </div>
-    </form>
+                <style>
+                    .collapsible {
+                        background-color: #FEED67;
+                        padding: 2px 2px 2px 2px;
+                        font-family: 'Baloo Chettan 2', cursive;
+                        cursor: pointer;
+                        width: 100%;
+                        border: none;
+                        text-align: left;
+                        outline: none;
+                        font-size: 30px;
+                        color: #F46710;
+                        margin: 5% 5% 5% 5%;
+                        border-radius: 10px;
+                        box-shadow: 10px 10px #F46710;
+                    }
+
+                    #middlemonth {
+                        background-color: #ffffe0;
+                        padding: 2px 2px 2px 2px;
+                        font-family: 'Baloo Chettan 2', cursive;
+                        cursor: pointer;
+                        width: 100%;
+                        border: none;
+                        text-align: left;
+                        outline: none;
+                        font-size: 15px;
+                    }
+
+                    .active, .collapsible:hover {
+                        background-color: #FEED67;
+                        border: none;
+                    }
+
+                    .content {
+                        padding-top: 2%;
+                        padding-left: 7%;
+                        display: none;
+                        overflow: hidden;
+                        background-color: white;
+                        color: #083d77;
+                        font-size: large;
+                        font-weight: bold;
+                    }
+                </style>
+
+                <script>
+                    var coll = document.getElementsByClassName("collapsible");
+                    var i;
+                    for (i = 0; i < coll.length; i++) {
+                        coll[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+                            var content = this.nextElementSibling;
+                            if (content.style.display === "block") {
+                                content.style.display = "none";
+                            } else {
+                                content.style.display = "block";
+                            }
+                        });
+                    }
+                </script>
+
+
+            </div>
+        </form>
 
 
 
 
-    <script src="../static/scripts/js/probaindex.js"></script>
-    <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
-    <script src='https://rawgit.com/tempusdominus/bootstrap-4/master/build/js/tempusdominus-bootstrap-4.min.js'></script>
+        <script src="../static/scripts/js/probaindex.js"></script>
+        <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+        <script src='https://rawgit.com/tempusdominus/bootstrap-4/master/build/js/tempusdominus-bootstrap-4.min.js'></script>
 
-</body>
+    </body>
 </html>
