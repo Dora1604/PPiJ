@@ -27,7 +27,18 @@
 
 
 
-    <img class="sticky" src="../static/images/gleen.png" alt="Avatar">
+    <img  onclick="goBack()" class="sticky" src="../static/images/gleen.png" alt="Avatar">
+
+
+    <!--<button onclick="goBack()">Go Back</button>-->
+
+
+    <script>
+        function goBack() {
+           window.history.go(-2);
+        }
+    </script>
+
 
 
     <form action="{{ url_for('nesto1') }}" method="post">
@@ -64,7 +75,7 @@
 
             </div>
 
-            <input type="submit" style="margin-top:5%" class="button pdf">
+            <button type="submit" style="margin-top:5%; color: #ffffe0;" class="button pdf" >SUBMIT</button>
 
             <style>
                 input[type="submit" i] {
@@ -74,6 +85,8 @@
                 }
             </style>
 
+
+            <p style="font-weight: bold; letter-spacing: 7px; font-size:x-large; margin-top:5%; color:#F46710;"> {{ bla }}</p>
 
             <div id="opt1results">
                 <div class="row" style="margin-bottom: 100px">
@@ -166,7 +179,9 @@
                     </div>
                     <div class="col-sm result">
                         <div class="resultinner">
-                            <div class="destinationname" style="font-weight: bold; letter-spacing: 7px; font-size:x-large">
+                            <div class="destinationname" style="        font-weight: bold;
+        letter-spacing: 7px;
+        font-size: x-large">
                                 ZADAR
                             </div>
                             <div class="destinationimage">
@@ -243,7 +258,7 @@
                                     ''
                                 </div>
                                 <div class="col-sm" id="pdf">
-                                    <a class="button pdf">Export to PDF</a>
+                                  
                                 </div>
                                 <div class="col-sm">
                                     <a onclick="newDate()" id="right_button" class="button chooseagain"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>

@@ -1,3 +1,4 @@
+
 <head>
     <link rel="stylesheet" type="text/css" href="/static/scripts/css/probaindex.css" />
     <script type="text/javascript" src="../static/scripts/jquery-1.10.2.js"></script>
@@ -26,72 +27,80 @@
             z-index: 1;
         }
     </style>
- 
-        <img class="sticky" src="../static/images/gleen.png" alt="Avatar">
+
+    <img onclick="goBack()" class="sticky" src="../static/images/gleen.png" alt="Avatar">
+
+
+    <script>
+        function goBack() {
+            window.history.go(-2);
+        }
+    </script>
+
+    <form action="{{ url_for('nesto2') }}" method="post">
 
 
 
-        <form action="{{ url_for('nesto2') }}" method="post">
+        <div id="option2A" style="margin-top:10%; ">
 
+            <div id="opt2search" style="margin-bottom:5%;">
+                <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+                    <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 
-
-            <div id="option2A" style="margin-top:10%; ">
-
-                <div id="opt2search" style="margin-bottom:5%;">
-                    <div class="row" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-                        <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-
-                        </div>
-                        <div class="col-sm">
-                            <div class="dropdownDest" style="border-bottom: 2px solid #083d77">
-                                <div class="text__center">
-                                    <select name="city" class="cs-select cs-skin-elastic">
-                                        <option value="" selected="selected">Choose a city</option>
-                                        <option value="zagreb">ZAGREB</option>
-                                        <option value="osijek">OSIJEK</option>
-                                        <option value="pula">PULA</option>
-                                        <option value="split">SPLIT</option>
-                                        <option value="dubrovnik">DUBROVNIK</option>
-                                        <option value="zadar">ZADAR</option>
-                                        <option value="rijeka">RIJEKA</option>
-                                        <option value="varazdin">VARAŽDIN</option>
-                                        <option value="sibenik">ŠIBENIK</option>
-                                    </select>
-                                </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="dropdownDest" style="border-bottom: 2px solid #083d77">
+                            <div class="text__center">
+                                <select name="city" class="cs-select cs-skin-elastic">
+                                    <option value="" selected="selected">Choose a city</option>
+                                    <option value="zagreb">ZAGREB</option>
+                                    <option value="osijek">OSIJEK</option>
+                                    <option value="pula">PULA</option>
+                                    <option value="split">SPLIT</option>
+                                    <option value="dubrovnik">DUBROVNIK</option>
+                                    <option value="zadar">ZADAR</option>
+                                    <option value="rijeka">RIJEKA</option>
+                                    <option value="varazdin">VARAŽDIN</option>
+                                    <option value="sibenik">ŠIBENIK</option>
+                                </select>
                             </div>
-                        </div>
-
-                        <div class="col-sm">
-                            <div class="dropdownSeason" style="border-bottom: 2px solid #083d77">
-                                <div class="text__center">
-                                    <select name="season" class="cs-select cs-skin-elastic">
-                                        <option value="" selected="selected">Choose a season</option>
-                                        <option value="summer">SUMMER</option>
-                                        <option value="autumn">AUTUMN</option>
-                                        <option value="winter">WINTER</option>
-                                        <option value="spring">SPRING</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
                         </div>
                     </div>
 
-
+                    <div class="col-sm">
+                        <div class="dropdownSeason" style="border-bottom: 2px solid #083d77">
+                            <div class="text__center">
+                                <select name="season" class="cs-select cs-skin-elastic">
+                                    <option value="" selected="selected">Choose a season</option>
+                                    <option value="summer">SUMMER</option>
+                                    <option value="autumn">AUTUMN</option>
+                                    <option value="winter">WINTER</option>
+                                    <option value="spring">SPRING</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+                    </div>
                 </div>
-                <div style="text-align:center; margin-bottom:5%">
-                    <input type="submit" class="button pdf">
 
-                    <style>
-                        input[type="submit" i] {
-                            background-color: #083d77;
-                            color: antiquewhite;
-                            border-color: #083d77;
-                        }
-                    </style>
 
-                </div>
+            </div>
+            <div style="text-align:center; margin-bottom:5%">
+                <button type="submit" style="margin-top:5%; color: #ffffe0;" class="button pdf">SUBMIT</button>
+
+                <style>
+                    input[type="submit" i] {
+                        background-color: #083d77;
+                        color: antiquewhite;
+                        border-color: #083d77;
+                    }
+                </style>
+
+            </div>
+
+            <p style="font-weight: bold; letter-spacing: 7px; font-size:x-large; margin-top:5%; color:#F46710;  text-transform: uppercase; margin-left:5%">
+                {{ imegrada }} {{ ime }}</pstyle="font-weight:>
 
 
                 <div id="opt2resA" style="width:90%">
@@ -100,7 +109,7 @@
                             {% set count = namespace(value = 0) %}
                             {% for key, value in mapa2.items() %}
                             {% if count.value == 0 %}
-                            <dd>{{ key|e }}</dd>
+                            <dd>{{ key|e }} </dd>
                             {% endif %}
                             {% set count.value = count.value + 1 %}
                             {% endfor %}
@@ -110,7 +119,7 @@
                             {% for key, value in mapa2.items() %}
                             {% if count.value == 0 %}
                             {% for key1, value1 in value.items() %}
-                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            <dd>{{ key1|e }} {{ value1|e }} °C</dd>
                             <!--<dd></dd>-->
                             {% endfor %}
                             {% endif %}
@@ -133,7 +142,7 @@
                             {% for key, value in mapa2.items() %}
                             {% if count.value == 1 %}
                             {% for key1, value1 in value.items() %}
-                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            <dd>{{ key1|e }} {{ value1|e }} °C</dd>
                             {% endfor %}
                             {% endif %}
                             {% set count.value = count.value + 1 %}
@@ -156,7 +165,7 @@
                             {% for key, value in mapa2.items() %}
                             {% if count.value == 2 %}
                             {% for key1, value1 in value.items() %}
-                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            <dd>{{ key1|e }} {{ value1|e }} °C</dd>
                             {% endfor %}
                             {% endif %}
                             {% set count.value = count.value + 1 %}
@@ -179,7 +188,7 @@
                             {% for key, value in mapa2.items() %}
                             {% if count.value == 3 %}
                             {% for key1, value1 in value.items() %}
-                            <dd>{{ key1|e }} {{ value1|e }}</dd>
+                            <dd>{{ key1|e }} {{ value1|e }} °C</dd>
                             {% endfor %}
                             {% endif %}
                             {% set count.value = count.value + 1 %}
@@ -195,7 +204,7 @@
                                 ''
                             </div>
                             <div class="col-sm" id="pdf">
-                                <a class="button pdf">Export to PDF</a>
+
                             </div>
                             <div class="col-sm" id="right_button">
                                 <a class="button chooseagain" onclick="newDest()"><i class="fa fa-arrow-up" style="color:#ffffe0"></i></a>
@@ -716,18 +725,22 @@
                 </script>
 
 
-            </div>
-        </form>
+        </div>
+    </form>
+
+  
 
 
 
 
-        <script src="../static/scripts/js/probaindex.js"></script>
-        <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
-        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
-        <script src='https://rawgit.com/tempusdominus/bootstrap-4/master/build/js/tempusdominus-bootstrap-4.min.js'></script>
+    <script src="http://cdn.bootcss.com/jquery/1.8.1/jquery.min.js"></script>
+    <script src="../static/scripts/snow-plugin.js"></script>
+    <script src="../static/scripts/js/probaindex.js"></script>
+    <script src='https://code.jquery.com/jquery-3.1.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+    <script src='https://rawgit.com/tempusdominus/bootstrap-4/master/build/js/tempusdominus-bootstrap-4.min.js'></script>
 
-    </body>
+</body>
 </html>
